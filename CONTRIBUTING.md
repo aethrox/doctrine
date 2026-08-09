@@ -25,4 +25,4 @@ npm test
 
 ## Commit style
 
-This repo follows [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) (`feat:`, `fix:`, `ci:`, etc.) — see `git log` for examples.
+This repo follows [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) (`feat:`, `fix:`, `ci:`, etc.); see `git log` for examples.
