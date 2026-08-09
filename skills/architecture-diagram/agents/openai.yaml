@@ -1,0 +1,3 @@
+interface:
+  display_name: "Architecture Diagram"
+  short_description: "C4-level diagrams committed as diagram as code"
