@@ -1,0 +1,52 @@
+{
+  "name": "doctrine",
+  "version": "1.0.0",
+  "description": "Software engineering discipline grounded in named primary standards (OWASP, ITIL, IETF RFCs, ISO, BABOK, SBAR, and more) instead of invented convention.",
+  "author": {
+    "name": "aethrox",
+    "url": "https://github.com/aethrox"
+  },
+  "homepage": "https://github.com/aethrox/doctrine",
+  "repository": "https://github.com/aethrox/doctrine",
+  "license": "MIT",
+  "keywords": [
+    "engineering",
+    "skills",
+    "standards",
+    "tdd",
+    "code-review",
+    "incident-response",
+    "domain-modeling",
+    "sdlc"
+  ],
+  "skills": [
+    "./skills/api-design-standards",
+    "./skills/code-review",
+    "./skills/code-style-lint",
+    "./skills/codebase-design",
+    "./skills/dependency-upgrade-management",
+    "./skills/diagnosing-bugs",
+    "./skills/domain-modeling",
+    "./skills/grilling",
+    "./skills/handoff",
+    "./skills/improve-codebase-architecture",
+    "./skills/incident-response",
+    "./skills/observability",
+    "./skills/prototype",
+    "./skills/release-versioning",
+    "./skills/research",
+    "./skills/resolving-merge-conflicts",
+    "./skills/safe-deployment",
+    "./skills/secure-coding",
+    "./skills/spec-to-tickets",
+    "./skills/tdd",
+    "./skills/teach",
+    "./skills/test-strategy",
+    "./skills/to-questionnaire",
+    "./skills/triage",
+    "./skills/wait-what",
+    "./skills/wayfinder",
+    "./skills/wizard",
+    "./skills/writing-for-agents"
+  ]
+}
