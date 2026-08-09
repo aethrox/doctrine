@@ -91,10 +91,6 @@ Every skill follows the same shape: a one-sentence defining constraint (the fact
 
 `mcp-server.js` is a plain Node.js (ESM, no build step) script: at startup it reads every `skills/<name>/SKILL.md`, parses the `name`/`description` out of the frontmatter, and registers each one as an MCP prompt whose content is the full skill text. Run `npm test` to smoke-test it. The test spawns the server, does a real MCP handshake, and asserts `prompts/list` returns all 28 skills with a name and description.
 
-## History
-
-This repo was built as `engineering-skills` through four research/build rounds, then renamed and re-platformed to `doctrine`.
-
 ## Limitations
 
 None of the 28 skills have been battle-tested against a real release, incident, or security review yet; they're authored from standards but not yet validated in use. The MCP server has a smoke test (`npm test`) but hasn't been exercised against a real third-party MCP client (Cursor, Windsurf, etc.) yet, only a scripted handshake. This repo has no SECURITY.md or vulnerability reporting channel yet.
