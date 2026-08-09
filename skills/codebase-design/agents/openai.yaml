@@ -1,0 +1,3 @@
+interface:
+  display_name: "Codebase Design"
+  short_description: "Deep modules, information hiding, design it twice"

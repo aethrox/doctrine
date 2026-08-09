@@ -1,0 +1,3 @@
+interface:
+  display_name: "Incident Response"
+  short_description: "Severity, roles, mitigate-first, blameless postmortem"

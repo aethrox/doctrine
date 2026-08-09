@@ -1,0 +1,3 @@
+interface:
+  display_name: "Spec to Tickets"
+  short_description: "Synthesize spec, tracer-bullet tickets, Ready/Done gates"

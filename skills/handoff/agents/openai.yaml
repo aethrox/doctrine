@@ -1,0 +1,3 @@
+interface:
+  display_name: "Handoff"
+  short_description: "SBAR structure for on-call, incident, and work handoffs"

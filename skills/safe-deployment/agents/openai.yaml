@@ -1,0 +1,3 @@
+interface:
+  display_name: "Safe Deployment"
+  short_description: "Feature flags, canary/blue-green, rollback triggers"

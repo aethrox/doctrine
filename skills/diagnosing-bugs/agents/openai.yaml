@@ -1,0 +1,3 @@
+interface:
+  display_name: "Diagnosing Bugs"
+  short_description: "Agans' 9 rules: bisect, one variable, audit trail"

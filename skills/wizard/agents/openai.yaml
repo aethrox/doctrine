@@ -1,0 +1,3 @@
+interface:
+  display_name: "Wizard"
+  short_description: "SOP-grounded interactive script for human-only steps"

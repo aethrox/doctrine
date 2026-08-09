@@ -1,0 +1,3 @@
+interface:
+  display_name: "Secure Coding"
+  short_description: "OWASP-mapped input, auth, secrets, deps discipline"

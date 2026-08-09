@@ -1,0 +1,3 @@
+interface:
+  display_name: "Release Versioning"
+  short_description: "Conventional Commits → SemVer → Keep a Changelog"

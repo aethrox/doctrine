@@ -1,0 +1,3 @@
+interface:
+  display_name: "Test Strategy"
+  short_description: "Test data sourcing, flaky-test quarantine, integration boundary"

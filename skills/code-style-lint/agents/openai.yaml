@@ -1,0 +1,3 @@
+interface:
+  display_name: "Code Style & Lint"
+  short_description: "Formatter as source of truth, pre-commit/CI enforcement"

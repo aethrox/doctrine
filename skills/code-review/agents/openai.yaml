@@ -1,0 +1,3 @@
+interface:
+  display_name: "Code Review"
+  short_description: "Improve-over-perfect bar, Fowler smells, small PRs"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Wait, What?"
+  short_description: "ISO 24495-1 plain-language re-pitch when a point missed"

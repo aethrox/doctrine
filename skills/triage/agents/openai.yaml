@@ -1,0 +1,3 @@
+interface:
+  display_name: "Triage"
+  short_description: "Impact x Urgency priority scoring and routing"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Dependency & Upgrade Management"
+  short_description: "SBOM, security vs major-upgrade lanes, deprecation windows"

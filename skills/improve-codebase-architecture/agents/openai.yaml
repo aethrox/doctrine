@@ -1,0 +1,3 @@
+interface:
+  display_name: "Improve Codebase Architecture"
+  short_description: "Scan for shallow modules, classify by Fowler's debt quadrant"

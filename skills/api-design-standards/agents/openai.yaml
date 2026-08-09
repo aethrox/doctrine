@@ -1,0 +1,3 @@
+interface:
+  display_name: "API Design Standards"
+  short_description: "REST conventions, versioning, breaking-change rules"
