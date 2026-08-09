@@ -52,7 +52,7 @@ Re-run after pulling updates to resync.
 
 ## How it works
 
-Every skill follows the same shape: a one-sentence defining constraint (the fact that makes it behave differently from the obvious default), a numbered set of phases with concrete, checkable rules, and a closing checklist. Each phase is grounded in a real, named industry standard rather than an invented convention, so the discipline can be traced back to its source.
+Every skill follows the same shape: a one-sentence defining constraint (the fact that makes it behave differently from the obvious default), a numbered set of phases with concrete, checkable rules, and a closing checklist. The skills combine named external standards and established practices with clearly labeled Doctrine policy defaults.
 
 See [WORKFLOW.md](./WORKFLOW.md) for how the 33 skills relate to each other: the lifecycle they map to, which ones cross-reference which, and a worked example.
 

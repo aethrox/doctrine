@@ -2,10 +2,31 @@ import { spawn } from "node:child_process";
 import assert from "node:assert/strict";
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
-import yaml from "js-yaml";
+import { parseFrontmatter } from "./frontmatter.mjs";
 
 const skillsDir = join(import.meta.dirname, "skills");
 const skills = [];
+
+function validateFrontmatter(raw, relativePath, dir) {
+  let frontmatter;
+  try {
+    ({ frontmatter } = parseFrontmatter(raw));
+  } catch (error) {
+    assert.fail(`${relativePath}: invalid YAML frontmatter: ${error.message}`);
+  }
+  assert.ok(frontmatter && Object.getPrototypeOf(frontmatter) === Object.prototype, `${relativePath}: YAML frontmatter must be a mapping`);
+  assert.ok(typeof frontmatter.name === "string" && frontmatter.name.trim(), `${relativePath}: frontmatter name must be a non-empty string`);
+  assert.ok(typeof frontmatter.description === "string" && frontmatter.description.trim(), `${relativePath}: frontmatter description must be a non-empty string`);
+  assert.equal(frontmatter.name, dir, `${relativePath}: frontmatter name must match directory name ${dir}`);
+  return frontmatter;
+}
+
+const lf = '---\nname: example\ndescription: "Uses an \\"inner\\" quote"\n---\nBody\n';
+const crlf = lf.replaceAll("\n", "\r\n");
+assert.deepEqual(parseFrontmatter(crlf).frontmatter, parseFrontmatter(lf).frontmatter, "CRLF frontmatter must parse the same as LF frontmatter");
+assert.equal(parseFrontmatter(lf).frontmatter.description, 'Uses an "inner" quote', "quoted YAML descriptions must be decoded");
+assert.throws(() => validateFrontmatter("---\ndescription: Missing name\n---\n", "synthetic/SKILL.md", "synthetic"), /name must be a non-empty string/);
+assert.throws(() => validateFrontmatter("---\nname: synthetic\n---\n", "synthetic/SKILL.md", "synthetic"), /description must be a non-empty string/);
 
 for (const dir of readdirSync(skillsDir)) {
   const relativePath = `skills/${dir}/SKILL.md`;
@@ -18,16 +39,8 @@ for (const dir of readdirSync(skillsDir)) {
     continue;
   }
 
-  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/);
-  assert.ok(match, `${relativePath}: missing YAML frontmatter`);
-
-  let frontmatter;
-  try {
-    frontmatter = yaml.load(match[1]);
-  } catch (error) {
-    assert.fail(`${relativePath}: invalid YAML frontmatter: ${error.message}`);
-  }
-  skills.push({ name: frontmatter?.name || dir, raw, relativePath });
+  const { name, description } = validateFrontmatter(raw, relativePath, dir);
+  skills.push({ name, description, raw, relativePath });
 }
 
 const child = spawn(process.execPath, ["mcp-server.js"], { cwd: import.meta.dirname, stdio: ["pipe", "pipe", "pipe"] });
@@ -75,7 +88,12 @@ try {
     skills.map(({ name }) => name).sort(),
     "listed prompt names must exactly match discovered skills",
   );
-  assert.ok(prompts.every((p) => p.name && p.description), "every prompt needs a name and description");
+  const promptsByName = new Map(prompts.map((prompt) => [prompt.name, prompt]));
+  for (const skill of skills) {
+    const prompt = promptsByName.get(skill.name);
+    assert.equal(prompt?.name, skill.name, `${skill.relativePath}: prompts/list name mismatch`);
+    assert.equal(prompt?.description, skill.description, `${skill.relativePath}: prompts/list description mismatch`);
+  }
 
   const skillsByName = new Map(skills.map((skill) => [skill.name, skill]));
   await Promise.all(prompts.map(async ({ name }, index) => {
@@ -87,7 +105,7 @@ try {
     );
   }));
 
-  console.log(`ok: ${skills.length} skills YAML-validated, ${prompts.length} listed, ${prompts.length} content-verified`);
+  console.log(`ok: 4 frontmatter regressions passed, ${skills.length} skills YAML-validated, ${prompts.length} listed, ${prompts.length} content-verified`);
 } finally {
   child.kill();
 }
