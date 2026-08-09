@@ -54,6 +54,8 @@ Re-run after pulling updates to resync.
 
 Every skill follows the same shape: a one-sentence defining constraint (the fact that makes it behave differently from the obvious default), a numbered set of phases with concrete, checkable rules, and a closing checklist. Each phase is grounded in a real, named industry standard rather than an invented convention, so the discipline can be traced back to its source.
 
+See [WORKFLOW.md](./WORKFLOW.md) for how the 28 skills relate to each other: the lifecycle they map to, which ones cross-reference which, and a worked example.
+
 ## Skills
 
 | Skill | Standard(s) it encodes | Covers |
