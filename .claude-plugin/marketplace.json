@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "doctrine",
+  "description": "Software engineering discipline grounded in named primary standards (OWASP, ITIL, IETF RFCs, ISO, BABOK, SBAR, and more) instead of invented convention.",
+  "owner": {
+    "name": "aethrox",
+    "url": "https://github.com/aethrox"
+  },
+  "plugins": [
+    {
+      "name": "doctrine",
+      "description": "28 skills covering the software development lifecycle, each grounded in a real, named standard.",
+      "source": "./",
+      "category": "development"
+    }
+  ]
+}
