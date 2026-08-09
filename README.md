@@ -1,10 +1,10 @@
 # doctrine
 
-Software engineering discipline grounded in named primary standards — OWASP, ITIL, IETF RFCs, ISO, BABOK, SBAR, and more — instead of invented convention. 28 skills covering the software development lifecycle: TDD, code review, incident response, domain modeling, deployment, dependency management, and more.
+Software engineering discipline grounded in named primary standards (OWASP, ITIL, IETF RFCs, ISO, BABOK, SBAR, and more) instead of invented convention. 28 skills covering the software development lifecycle: TDD, code review, incident response, domain modeling, deployment, dependency management, and more.
 
 Two ways to use it, depending on your tool:
 
-## Option 1 — Claude Code plugin
+## Option 1: Claude Code plugin
 
 Native install for Claude Code: the right skill is auto-invoked from its description, no manual copying.
 
@@ -15,9 +15,9 @@ Native install for Claude Code: the right skill is auto-invoked from its descrip
 
 Toggle it off later from `enabledPlugins` in `~/.claude/settings.json`, same as any other plugin.
 
-## Option 2 — MCP server (Claude Desktop, Cursor, Windsurf, Cline, and anything else that speaks MCP)
+## Option 2: MCP server (Claude Desktop, Cursor, Windsurf, Cline, and anything else that speaks MCP)
 
-Every skill is exposed as an MCP **prompt** — the same content, reachable from any MCP-capable client, not just Claude Code. Add it as a local MCP server:
+Every skill is exposed as an MCP **prompt**: the same content, reachable from any MCP-capable client, not just Claude Code. Add it as a local MCP server:
 
 ```json
 {
@@ -30,7 +30,7 @@ Every skill is exposed as an MCP **prompt** — the same content, reachable from
 }
 ```
 
-(Exact config location and format differ per client — Claude Desktop's `claude_desktop_config.json`, Cursor's `.cursor/mcp.json`, etc. — but the `command`/`args` above are the same everywhere.)
+(Exact config location and format differ per client; Claude Desktop's `claude_desktop_config.json`, Cursor's `.cursor/mcp.json`, etc., but the `command`/`args` above are the same everywhere.)
 
 Run it directly to confirm it works:
 
@@ -38,7 +38,7 @@ Run it directly to confirm it works:
 npx github:aethrox/doctrine
 ```
 
-## Option 3 — manual copy (no plugin system, no MCP client)
+## Option 3: manual copy (no plugin system, no MCP client)
 
 ```bash
 git clone https://github.com/aethrox/doctrine.git
@@ -89,15 +89,15 @@ Every skill follows the same shape: a one-sentence defining constraint (the fact
 
 ## MCP server internals
 
-`mcp-server.js` is a plain Node.js (ESM, no build step) script: at startup it reads every `skills/<name>/SKILL.md`, parses the `name`/`description` out of the frontmatter, and registers each one as an MCP prompt whose content is the full skill text. Run `npm test` to smoke-test it — spawns the server, does a real MCP handshake, and asserts `prompts/list` returns all 28 skills with a name and description.
+`mcp-server.js` is a plain Node.js (ESM, no build step) script: at startup it reads every `skills/<name>/SKILL.md`, parses the `name`/`description` out of the frontmatter, and registers each one as an MCP prompt whose content is the full skill text. Run `npm test` to smoke-test it. The test spawns the server, does a real MCP handshake, and asserts `prompts/list` returns all 28 skills with a name and description.
 
 ## History
 
-This repo was built as `engineering-skills` through four research/build rounds, then renamed and re-platformed to `doctrine`. See [PLAN.md](./PLAN.md) for the full research log, per-skill standards, and the rename rationale.
+This repo was built as `engineering-skills` through four research/build rounds, then renamed and re-platformed to `doctrine`.
 
 ## Limitations
 
-None of the 28 skills have been battle-tested against a real release, incident, or security review yet — they're authored from standards but not yet validated in use. The MCP server has a smoke test (`npm test`) but hasn't been exercised against a real third-party MCP client (Cursor, Windsurf, etc.) yet, only a scripted handshake. This repo has no SECURITY.md or vulnerability reporting channel yet.
+None of the 28 skills have been battle-tested against a real release, incident, or security review yet; they're authored from standards but not yet validated in use. The MCP server has a smoke test (`npm test`) but hasn't been exercised against a real third-party MCP client (Cursor, Windsurf, etc.) yet, only a scripted handshake. This repo has no SECURITY.md or vulnerability reporting channel yet.
 
 ## License
 
