@@ -3,7 +3,6 @@
 <p align="center">
   <a href="./LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
   <a href="https://github.com/sponsors/aethrox"><img alt="GitHub Sponsors" src="https://img.shields.io/badge/sponsor-GitHub%20Sponsors-EA4AAA?logo=githubsponsors&logoColor=white"></a>
-  <a href="https://buymeacoffee.com/aethrox"><img alt="Buy Me a Coffee" src="https://img.shields.io/badge/support-Buy%20Me%20a%20Coffee-FFDD00?logo=buymeacoffee&logoColor=black"></a>
 </p>
 
 Software engineering discipline grounded in named primary standards (OWASP, ITIL, IETF RFCs, ISO, BABOK, SBAR, and more) instead of invented convention. 33 skills covering the software development lifecycle: TDD, code review, incident response, domain modeling, deployment, dependency management, and more.
@@ -109,6 +108,21 @@ See [WORKFLOW.md](./WORKFLOW.md) for how the 33 skills relate to each other: the
 ## Limitations
 
 None of the 33 skills have been battle-tested against a real release, incident, or security review yet; they're authored from standards but not yet validated in use. The MCP server has a smoke test (`npm test`) but hasn't been exercised against a real third-party MCP client (Cursor, Windsurf, etc.) yet, only a scripted handshake. This repo has no SECURITY.md or vulnerability reporting channel yet.
+
+## Donate
+
+<p align="center">
+  <a href="https://buymeacoffee.com/aethrox"><img alt="Buy Me a Coffee" src="https://img.shields.io/badge/support-Buy%20Me%20a%20Coffee-FFDD00?logo=buymeacoffee&logoColor=black"></a>
+  <a href="https://etherscan.io/address/0x090f4d8d313bb12c13c63c8b6a7acba19af94490"><img alt="Ethereum" src="https://img.shields.io/badge/ETH-donate-3C3C3D?logo=ethereum&logoColor=white"></a>
+  <a href="https://solscan.io/account/9PduqxAVxPp78heUG7KKAVpSbPAYa3HjwN3r3JnzcE2X"><img alt="Solana" src="https://img.shields.io/badge/SOL-donate-9945FF?logo=solana&logoColor=white"></a>
+  <a href="https://mempool.space/address/bc1q4vzs920q3x7d76eq2fu3agq4gxywu5z05aqf86"><img alt="Bitcoin" src="https://img.shields.io/badge/BTC-donate-F7931A?logo=bitcoin&logoColor=white"></a>
+</p>
+
+| Chain | Address |
+|---|---|
+| Ethereum | `0x090f4d8d313bb12c13c63c8b6a7acba19af94490` |
+| Solana | `9PduqxAVxPp78heUG7KKAVpSbPAYa3HjwN3r3JnzcE2X` |
+| Bitcoin | `bc1q4vzs920q3x7d76eq2fu3agq4gxywu5z05aqf86` |
 
 ## Contributing
 
