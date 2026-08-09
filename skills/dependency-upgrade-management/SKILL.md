@@ -20,7 +20,7 @@ Route every proposed upgrade (automated PR or manual bump) into the lane that ma
 
 | Lane | Trigger | Review depth | Cadence |
 |---|---|---|---|
-| **Security fast-track** | a CVE against a version currently in use | automerge if it's a patch-level bump with a passing test suite and a short observation window; manual review only if it's also a major bump | immediate, outside the batch schedule |
+| **Security fast-track** | a CVE against a version currently in use | Doctrine's default policy is to automerge if it's a patch-level bump with a passing test suite and a short observation window; manual review only if it's also a major bump | immediate, outside the batch schedule |
 | **Routine batch** | non-security patch/minor bumps | grouped, reviewed together, low ceremony | weekly or similar fixed cadence: batching avoids a constant trickle of one-line PRs eating review attention |
 | **Major-version migration** | a major version bump, even with no known CVE | full review: read the changelog for breaking changes, run the full test suite, check every usage site the upgrade touches | deliberate, scheduled, never auto-merged |
 
@@ -32,7 +32,7 @@ The same discipline a dependency owner owes you, you owe your own consumers (int
 
 - Signal the deprecation before removal, for an HTTP API, the `Deprecation` and `Sunset` response headers (RFC 8594 / RFC 9745) plus a `Link` header pointing at migration docs; for a library, a deprecation warning at the call site plus a changelog entry.
 - State a concrete removal date in the signal, not "in a future release"; an open-ended deprecation trains consumers to ignore the warning, since there's no deadline forcing action.
-- Support the old and new path simultaneously during the window. A common baseline is **N-2**: support the current version plus the two prior ones, so a consumer has a real runway rather than a single release cycle to migrate.
+- Support the old and new path simultaneously during the window. Doctrine's default baseline is **N-2**: support the current version plus the two prior ones, so a consumer has a real runway rather than a single release cycle to migrate.
 - Only remove the deprecated path after the stated sunset date has passed, removing it early because "surely nobody's still on it" breaks whoever didn't get the memo in time, which is exactly the failure this phase exists to prevent.
 
 ## Phase 4: Safe major-version migration (as the consumer)

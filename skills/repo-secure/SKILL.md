@@ -15,17 +15,19 @@ Before changing anything, check the repo's current settings: SECURITY.md presenc
 
 ## Phase 2: Confirm which layers genuinely apply
 
-Not every setting belongs on every repo. A private, single-maintainer script repo has little use for external vulnerability disclosure workflows; a public library that other projects depend on needs nearly all of them. Ask, or infer from the repo's actual visibility and audience, which of the following genuinely apply before proposing to enable them:
+Not every setting belongs on every repo. A private, single-maintainer script repo has little use for external vulnerability disclosure workflows; a public library that other projects depend on needs nearly all of them. Ask the user explicitly which of the following genuinely apply before proposing any of them. The repo's actual visibility and audience should inform the question, but must not substitute for asking it:
 
 - **SECURITY.md and private vulnerability reporting**: how a researcher reports a vulnerability safely, without opening a public issue.
 - **Secret scanning and push protection**: catches credentials before they land in history, blocks the push rather than the after-the-fact cleanup.
 - **Dependabot alerts and dependency review**: flags vulnerable dependencies; see `dependency-upgrade-management` for what happens once one is flagged.
-- **Code scanning**: CodeQL or an equivalent, run in CI so a vulnerability surfaces before merge, not after.
+- **Code scanning**: CodeQL or an equivalent, run in CI so a vulnerability surfaces before merge, not after. Before proposing it, check whether GitHub Actions is available, whether a default or advanced CodeQL setup already exists, what runners it requires, and whether the repository's plan and visibility make the feature eligible.
 - **Branch protection**: who can push directly to the default branch, what must pass before a merge is allowed.
 
-## Phase 3: Enable in order, confirm before consequential changes
+## Phase 3: Confirm every change, then enable in order
 
-Enable settings that are purely additive (SECURITY.md, secret scanning, Dependabot, code scanning) without much ceremony; they rarely break an existing workflow. Branch protection is different: it can block a maintainer's own existing push habits or an automation's write access, so confirm with the user before applying it, and state exactly what it will restrict.
+Get explicit user confirmation before enabling any GitHub repository setting, including private vulnerability reporting, secret scanning, push protection, Dependabot, code scanning, and branch protection. Additive changes such as SECURITY.md and alerting or scanning settings can use a lightweight one-line confirmation, but they still remain unchanged until the user says yes. Branch protection deserves a more careful confirmation because it can block a maintainer's existing push habits or an automation's write access; state exactly what it will restrict before applying it.
+
+If the user's request is a pure audit or otherwise read-only, stay read-only: report the inventory and recommendations without enabling a setting or writing SECURITY.md.
 
 ## Phase 4: Record what was deliberately skipped
 
@@ -34,6 +36,8 @@ A setting that was considered and not enabled for a real reason (a solo repo wit
 ## Done when
 
 - [ ] The repo's current settings were inventoried before anything was proposed.
-- [ ] Each layer's applicability was judged against this specific repo's visibility and audience, not applied uniformly.
-- [ ] Additive settings were enabled directly; branch protection was confirmed with the user first, with its restrictions stated plainly.
+- [ ] Each layer's applicability was explicitly confirmed with the user against this specific repo's visibility and audience, not inferred or applied uniformly.
+- [ ] Code scanning eligibility and any existing CodeQL setup were checked before code scanning was proposed.
+- [ ] Every enabled setting was explicitly confirmed first; branch protection's restrictions received the most scrutiny and were stated plainly.
+- [ ] A pure audit or read-only request stayed read-only.
 - [ ] Anything deliberately skipped is recorded with its reason, not left unexplained.

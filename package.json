@@ -1,6 +1,6 @@
 {
   "name": "doctrine-mcp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "MCP server exposing the doctrine engineering-skills set as prompts for any MCP-capable client (Claude Desktop, Cursor, Windsurf, Cline, and more).",
   "type": "module",
   "license": "MIT",
@@ -9,16 +9,18 @@
     "doctrine-mcp": "./mcp-server.js"
   },
   "scripts": {
-    "test": "node smoke-test.mjs"
+    "test": "node smoke-test.mjs && node pack-test.mjs"
   },
   "files": [
     "mcp-server.js",
+    "frontmatter.mjs",
     "skills"
   ],
   "engines": {
     "node": ">=18"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0"
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "js-yaml": "^4.3.1"
   }
 }

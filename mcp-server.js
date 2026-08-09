@@ -4,20 +4,13 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { parseFrontmatter } from "./frontmatter.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const skillsDir = join(__dirname, "skills");
+const { version } = JSON.parse(readFileSync(join(__dirname, "package.json"), "utf8"));
 
-function parseFrontmatter(text) {
-  const match = text.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
-  if (!match) return { name: null, description: null };
-  const [, frontmatter] = match;
-  const name = frontmatter.match(/^name:\s*(.+)$/m)?.[1]?.trim();
-  const description = frontmatter.match(/^description:\s*(.+)$/m)?.[1]?.trim();
-  return { name, description };
-}
-
-const server = new McpServer({ name: "doctrine", version: "1.0.0" });
+const server = new McpServer({ name: "doctrine", version });
 
 let registered = 0;
 for (const dir of readdirSync(skillsDir)) {
@@ -29,7 +22,13 @@ for (const dir of readdirSync(skillsDir)) {
   } catch {
     continue;
   }
-  const { name, description } = parseFrontmatter(raw);
+  let name;
+  let description;
+  try {
+    ({ name, description } = parseFrontmatter(raw).frontmatter);
+  } catch {
+    // Keep one malformed skill from preventing the server from starting.
+  }
   server.registerPrompt(
     name || dir,
     {

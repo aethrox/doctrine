@@ -1,6 +1,6 @@
 ---
 name: repo-ship
-description: Split in-progress work into commits by intent as it happens, and give a new repository its name, visibility, description, and topics at the moment it is created rather than as a follow-up. Use when work is about to be committed or pushed, when a new repository is being created, or before any push that would otherwise land as one large commit.
+description: Split existing repository work into commits by intent as it happens, or give a new repository its name, visibility, description, and topics at creation. Use the matching path when work is about to be committed or pushed, before a push that would otherwise land as one large commit, or when a new repository is being created.
 ---
 
 # Repo Ship
@@ -9,30 +9,47 @@ A commit history and a repository's first impression are both easy to get right 
 
 This is a different job from `release-versioning`, which classifies already-made commits into a version bump and changelog entry for a release that is shipping now. This skill governs the commits themselves while work is in progress, and a repository's first creation; `release-versioning` takes over once code already exists and a release is being cut.
 
-## Phase 1: Split commits by intent, not by file count
+## Path A: Commit by intent for existing repository work
 
-A reader running `git log --oneline` should be able to tell what happened without opening a diff. One logical change per commit: a bug fix, a rename, and a new feature landing in the same commit is the pattern to avoid. If the working tree already mixes several intents, stage explicit paths per commit rather than staging everything at once. Formatting-only churn gets its own commit so it does not bury a real change inside it. Decide commit boundaries before editing when practical, especially when several intents will touch the same file.
+Use this path when existing work is about to be committed or pushed.
 
-## Phase 2: Name a new repository for what it is
+### Phase A1: Split commits by intent, not by file count
+
+A reader running `git log --oneline` should be able to tell what happened without opening a diff. One logical change per commit: a bug fix, a rename, and a new feature landing in the same commit is the pattern to avoid. If the working tree already mixes several intents, stage explicit paths per commit rather than staging everything at once. Formatting-only churn gets its own commit so it does not bury a real change inside it. Decide commit boundaries before editing when practical, especially when several intents will touch the same file. Use Conventional Commit types such as `fix` and `feat`, including a breaking-change marker where applicable, so `release-versioning` can later derive the SemVer bump from the history.
+
+### Phase A2: Verify the commits before reporting done
+
+Inspect the actual commit log, working tree status, and upstream tracking relationship. If a push failed or a commit was amended along the way, report that plainly rather than reporting success by assumption.
+
+### Path A done when
+
+- [ ] Every commit represents one logical change, and unrelated intents were never staged together.
+- [ ] Commit messages carry the applicable Conventional Commit type and breaking-change marker.
+- [ ] The actual commit log, working tree status, and upstream tracking relationship were inspected, not assumed.
+
+## Path B: New-repository creation
+
+Use this path when a new repository is being created.
+
+### Phase B1: Name the repository for what it is
 
 A repository's name should describe what it is, not the working directory it happened to be created in. Propose the name before creating the repository, and confirm it with whoever is creating it if there is any ambiguity about what the project actually is.
 
-## Phase 3: Decide visibility deliberately
+### Phase B2: Decide visibility deliberately
 
 Anything touching personal data, credentials, notes, or the repository owner's own infrastructure defaults to private. Public is for things meant to be shown. When it is genuinely ambiguous which one applies, ask rather than defaulting to public.
 
-## Phase 4: Fill description and topics at creation
+### Phase B3: Fill description and topics at creation
 
 A repository's one-line description and its topics are part of creating it, not a follow-up task that gets forgotten. Fill both at the moment the repository is created, so it never sits with zero topics and no description in the interim.
 
-## Phase 5: Verify before reporting done
+### Phase B4: Verify before reporting done
 
-Before saying a repository is shipped, inspect the actual commit log, the working tree's status, the upstream tracking relationship, and confirm the repository's visibility, description, and topics as they actually landed on the host, not as intended. If a push failed or a commit was amended along the way, report that plainly rather than reporting success by assumption.
+Before saying a repository was created as intended, confirm its name, visibility, description, and topics as they actually landed on the host, not as intended.
 
-## Done when
+### Path B done when
 
-- [ ] Every commit represents one logical change, and unrelated intents were never staged together.
 - [ ] The repository's name describes what it is, proposed and confirmed before creation.
 - [ ] Visibility was a deliberate decision, private by default for anything touching personal data or infrastructure.
 - [ ] Description and topics were filled at creation time, not left for later.
-- [ ] The actual commit log, working tree status, and repository metadata were inspected and confirmed, not assumed.
+- [ ] The repository's name and metadata were inspected on the host and confirmed, not assumed.

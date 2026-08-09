@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: Code review discipline: the approval bar is "improves code health," not "perfect," Fowler's code-smell catalog gives design/complexity concerns a name instead of a vague feeling, and small PRs keep review depth from degrading. Use when reviewing a pull request or diff, requesting a review, deciding whether a change is blockable, or leaving review feedback.
+description: "Code review discipline: the approval bar is \"improves code health,\" not \"perfect,\" Fowler's code-smell catalog gives design/complexity concerns a name instead of a vague feeling, and small PRs keep review depth from degrading. Use when reviewing a pull request or diff, requesting a review, deciding whether a change is blockable, or leaving review feedback."
 ---
 
 # Code Review
@@ -43,7 +43,7 @@ Block a change only for what would make code health **worse**, not for what mere
 
 ## Phase 4: Keep the diff reviewable
 
-A reviewer's attention is roughly constant, not scaling with diff size; a 2,000-line PR does not get 10x the scrutiny a 200-line PR gets, it gets a skim. Push back on splitting a change **before** review starts, not during: a target of roughly 400 changed lines keeps a diff small enough that every line actually gets read. A change that's inherently large (a mechanical rename, a generated file) is the exception, and should say so explicitly rather than being reviewed as if it were 2,000 lines of judgment calls.
+A reviewer's attention is roughly constant, not scaling with diff size; a 2,000-line PR does not get 10x the scrutiny a 200-line PR gets, it gets a skim. Push back on splitting a change **before** review starts, not during: Doctrine's default target of roughly 400 changed lines keeps a diff small enough that every line actually gets read. A change that's inherently large (a mechanical rename, a generated file) is the exception, and should say so explicitly rather than being reviewed as if it were 2,000 lines of judgment calls.
 
 ## Phase 5: Etiquette
 

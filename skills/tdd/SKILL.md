@@ -1,6 +1,6 @@
 ---
 name: tdd
-description: Test-driven development discipline: the red-green-refactor cycle, the testing pyramid's proportion of unit/integration/e2e, Fowler's test-double taxonomy, and the FIRST properties of a test worth keeping. Use when building a feature or fixing a bug test-first, mentions "TDD" or "red-green-refactor", or when deciding what kind of test to write, whether to mock a dependency, or how a test suite should be shaped.
+description: "Test-driven development discipline: the red-green-refactor cycle, the testing pyramid's proportion of unit/integration/e2e, Fowler's test-double taxonomy, and the FIRST properties of a test worth keeping. Use when building a feature or fixing a bug test-first, mentions \"TDD\" or \"red-green-refactor\", or when deciding what kind of test to write, whether to mock a dependency, or how a test suite should be shaped."
 ---
 
 # Test-Driven Development
