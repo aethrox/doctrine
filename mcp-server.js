@@ -7,6 +7,7 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const skillsDir = join(__dirname, "skills");
+const { version } = JSON.parse(readFileSync(join(__dirname, "package.json"), "utf8"));
 
 function parseFrontmatter(text) {
   const match = text.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
@@ -17,7 +18,7 @@ function parseFrontmatter(text) {
   return { name, description };
 }
 
-const server = new McpServer({ name: "doctrine", version: "1.0.0" });
+const server = new McpServer({ name: "doctrine", version });
 
 let registered = 0;
 for (const dir of readdirSync(skillsDir)) {

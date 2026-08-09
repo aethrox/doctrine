@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: Code review discipline: the approval bar is "improves code health," not "perfect," Fowler's code-smell catalog gives design/complexity concerns a name instead of a vague feeling, and small PRs keep review depth from degrading. Use when reviewing a pull request or diff, requesting a review, deciding whether a change is blockable, or leaving review feedback.
+description: "Code review discipline: the approval bar is \"improves code health,\" not \"perfect,\" Fowler's code-smell catalog gives design/complexity concerns a name instead of a vague feeling, and small PRs keep review depth from degrading. Use when reviewing a pull request or diff, requesting a review, deciding whether a change is blockable, or leaving review feedback."
 ---
 
 # Code Review

@@ -1,6 +1,6 @@
 {
   "name": "doctrine-mcp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "MCP server exposing the doctrine engineering-skills set as prompts for any MCP-capable client (Claude Desktop, Cursor, Windsurf, Cline, and more).",
   "type": "module",
   "license": "MIT",
@@ -20,5 +20,8 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.30.0"
+  },
+  "devDependencies": {
+    "js-yaml": "^4.3.0"
   }
 }
