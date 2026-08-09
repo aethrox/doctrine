@@ -9,7 +9,7 @@ A spec synthesizes what's already been decided; it does not re-interview the use
 
 ## Phase 1: Synthesize the spec
 
-Pull together what the conversation, plan, or existing notes have already established (problem statement, scope, explicit non-goals, and any real constraints (technical, timeline, dependency)) into one written document. This is a **synthesis** step, not a fresh discovery interview: if a genuine open question surfaces that nothing already discussed has answered, ask it once, narrowly, rather than re-covering ground already settled.
+Pull together what the conversation, plan, or existing notes have already established (problem statement, scope, explicit non-goals, and any real constraints (technical, timeline, dependency)) into one written document. This is a **synthesis** step, not a fresh discovery interview: if a genuine open question surfaces that nothing already discussed has answered, ask it once, narrowly, rather than re-covering ground already settled. Write the spec and its tickets without em dashes, using a comma, colon, period, or a reworded sentence instead.
 
 A spec worth ticketing states:
 

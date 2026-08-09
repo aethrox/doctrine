@@ -38,6 +38,7 @@ The deliverable is the answer, not the code. When the question is settled:
 - **Record the verdict** (what was learned, and what question it settles) in the issue, ticket, or a commit message. This is what survives; the code usually doesn't.
 - **Fold only the validated decision** into real code, built properly (tests, error handling, the works) rather than promoting the spike's code wholesale.
 - **Keep the spike as a reference, not as production code.** If it's worth keeping for the record, commit it to its own throwaway branch, out of main, and leave a pointer to that branch from the issue or commit that used its answer. Main keeps the decision, not the disposable code that reached it.
+- **Write the verdict without em dashes**: use a comma, colon, period, or a reworded sentence instead.
 
 ## Done when
 

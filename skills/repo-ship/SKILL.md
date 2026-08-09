@@ -5,7 +5,7 @@ description: Split existing repository work into commits by intent as it happens
 
 # Repo Ship
 
-A commit history and a repository's first impression are both easy to get right at the moment they are made and expensive to fix afterward. This skill's defining constraint, extending Conventional Commits from classifying already-made commits into shaping how they get made in the first place: split by intent as work happens, not by file count after the fact, and treat a new repository's metadata as part of creating it, not a task for later.
+A commit history and a repository's first impression are both easy to get right at the moment they are made and expensive to fix afterward. This skill's defining constraint, extending Conventional Commits from classifying already-made commits into shaping how they get made in the first place: split by intent as work happens, not by file count after the fact, and treat a new repository's metadata as part of creating it, not a task for later. Write generated commit messages and repository metadata without em dashes, using a comma, colon, period, or a reworded sentence instead.
 
 This is a different job from `release-versioning`, which classifies already-made commits into a version bump and changelog entry for a release that is shipping now. This skill governs the commits themselves while work is in progress, and a repository's first creation; `release-versioning` takes over once code already exists and a release is being cut.
 

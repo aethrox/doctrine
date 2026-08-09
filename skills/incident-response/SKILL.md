@@ -33,7 +33,7 @@ The immediate goal is restoring service, not understanding the failure; those ar
 
 ## Phase 4: Blameless postmortem
 
-Required for SEV1 always, abbreviated for SEV2, optional brief summary for SEV3. Structure:
+Required for SEV1 always, abbreviated for SEV2, optional brief summary for SEV3. Write the postmortem without em dashes, using a comma, colon, period, or a reworded sentence instead. Structure:
 
 1. **Summary**: one paragraph: what happened, user impact, how it was resolved.
 2. **Impact**: duration and scope (which users/systems), quantified where possible (requests failed, revenue/SLA impact; reuse the `observability` SLO/error-budget numbers if the service tracks them).

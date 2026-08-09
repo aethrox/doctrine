@@ -34,7 +34,7 @@ Run `grilling`'s frontier-round technique on the blocking gaps only: ask them to
 
 ## Phase 4: Write the answer into the document and existing decision record
 
-As each blocking gap resolves, edit the source document directly so the contradiction or TBD is actually gone, not just answered in conversation. If the repository already has a convention for recording decisions, such as `domain-modeling`'s `CONTEXT.md`, an ADR directory, or another discovered artifact, record the decision there in the same pass. If no such convention exists, say so and update only the source document; do not invent a new memory file as a fallback. A decision that only lives in the conversation is lost the moment the session ends; a decision that only lives in a separate record leaves the document still internally inconsistent for the next reader.
+As each blocking gap resolves, edit the source document directly so the contradiction or TBD is actually gone, not just answered in conversation. If the repository already has a convention for recording decisions, such as `domain-modeling`'s `CONTEXT.md`, an ADR directory, or another discovered artifact, record the decision there in the same pass. If no such convention exists, say so and update only the source document; do not invent a new memory file as a fallback. A decision that only lives in the conversation is lost the moment the session ends; a decision that only lives in a separate record leaves the document still internally inconsistent for the next reader. Write both artifacts without em dashes, using a comma, colon, period, or a reworded sentence instead.
 
 ## Phase 5: Confirm the document now reads as settled
 

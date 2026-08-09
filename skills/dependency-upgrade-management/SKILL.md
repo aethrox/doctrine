@@ -51,3 +51,4 @@ When upgrading a dependency across a major version, in order:
 - [ ] Every open upgrade PR is in the lane matching its actual risk, not queued generically.
 - [ ] No capability was removed without a prior deprecation signal carrying a concrete removal date and a support window.
 - [ ] A major-version upgrade was reviewed against its changelog and every real usage site, not merged on the strength of a passing CI run alone.
+- [ ] Generated prose uses commas, colons, periods, or reworded sentences instead of em dashes.

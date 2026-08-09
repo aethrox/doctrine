@@ -42,6 +42,7 @@ Capture the investigation as a single Markdown file:
 - Conflicting sources are surfaced side by side, not silently resolved by picking one; the reader deciding what to do with the conflict is a different judgment call than the researcher's.
 - Anything that couldn't be traced past a secondary source is marked as such, not smoothed over.
 - Save it where the repo already keeps this kind of note; if there's no existing convention, pick a sensible location and say where, so the next research pass doesn't have to rediscover it.
+- Write the report without em dashes: use a comma, colon, period, or a reworded sentence instead.
 
 Delegate the legwork to a background agent when the investigation is multi-step or time-consuming, so the primary conversation isn't blocked on reading, but the citation discipline in Phases 2–4 applies regardless of who does the reading.
 

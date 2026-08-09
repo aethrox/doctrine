@@ -35,7 +35,7 @@ Every experiment changes exactly one variable and keeps everything else pinned. 
 
 ## Rule 5: Keep an audit trail
 
-Write down every experiment and its result as you go, including the negative ones; "tried X, no change" is information, and without a record it gets re-tried by mistake an hour later. Tag any temporary debug instrumentation with a unique, greppable prefix so cleanup at the end is a single search, not a memory exercise.
+Write down every experiment and its result as you go, including the negative ones; "tried X, no change" is information, and without a record it gets re-tried by mistake an hour later. Tag any temporary debug instrumentation with a unique, greppable prefix so cleanup at the end is a single search, not a memory exercise. Write the audit trail and final explanation without em dashes, using a comma, colon, period, or a reworded sentence instead.
 
 ## Rule 6: Check the plug
 

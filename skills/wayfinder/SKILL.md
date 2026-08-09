@@ -33,6 +33,8 @@ Work the open decisions in dependency order, one at a time, resolving several in
 
 A decision that turns out to invalidate an earlier one isn't a failure of the process; reopen the earlier decision, note why, and record the supersession rather than quietly overwriting it.
 
+Write proposals and resolutions without em dashes, using a comma, colon, period, or a reworded sentence instead.
+
 ## Phase 4: Track state honestly
 
 Keep three categories visibly distinct as the effort progresses:

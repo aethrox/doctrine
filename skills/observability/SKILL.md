@@ -47,3 +47,4 @@ For an API or service boundary specifically, the same four collapse into the **R
 - [ ] The service exposes latency (success/failure split), errors, traffic, and saturation.
 - [ ] The service has a stated SLI and SLO, and the error budget is a number someone could quote.
 - [ ] Every human-paging alert links a runbook, and thresholds are tied to error-budget burn rate, not an arbitrary constant.
+- [ ] Generated prose uses commas, colons, periods, or reworded sentences instead of em dashes.

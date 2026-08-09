@@ -44,3 +44,4 @@ Before adding an integration or e2e test, ask whether a contract test or a unit 
 - [ ] Test data is synthetic by default; any production snapshot in use is anonymized with referential integrity preserved and versioned alongside the code.
 - [ ] Every flaky test is either green, quarantined with a ticket/owner/stay-limit, or formally retired; none are silently tolerated in the required-check set.
 - [ ] Every integration or e2e test exists because a unit test or contract test genuinely couldn't cover it, not by default.
+- [ ] Generated prose uses commas, colons, periods, or reworded sentences instead of em dashes.

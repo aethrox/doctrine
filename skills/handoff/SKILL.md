@@ -36,3 +36,4 @@ A handoff isn't complete when it's sent. Closed-loop communication (the same pri
 - [ ] Assessment states the sender's judgment, not just a list of facts.
 - [ ] Recommendation names a concrete next action and any decision only the receiver can make.
 - [ ] Receipt was confirmed: the receiver restated the Assessment and Recommendation, not just acknowledged receiving a message.
+- [ ] Generated prose uses commas, colons, periods, or reworded sentences instead of em dashes.

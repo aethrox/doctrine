@@ -29,6 +29,7 @@ Every commit that touches shipped behaviour is typed:
 - `refactor` and `perf` carry no version bump **only if** the public interface is unchanged; a `perf` that changes a function signature is a `feat` or a breaking change, not a `perf`.
 - The `!` and the `BREAKING CHANGE:` footer are the **only** signals that force a MAJOR bump. Do not infer "this feels big"; if nothing changed for a consumer's existing calls, it is not breaking.
 - One commit, one logical change. A commit mixing a `fix` and an unrelated `feat` forces the classifier to guess; split it.
+- Write generated commit and changelog prose without em dashes: use a comma, colon, period, or a reworded sentence instead.
 
 Done when every commit in the range to be released has an unambiguous type and, for any breaking one, a `BREAKING CHANGE:` footer describing what a consumer must change.
 

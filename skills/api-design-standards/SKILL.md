@@ -54,3 +54,4 @@ When a breaking change is unavoidable (security fix, correcting a genuinely wron
 - [ ] Every changed field, endpoint, or default was checked against the Phase 3 table before shipping.
 - [ ] Any unavoidable breaking change has a stated deprecation window with the old and new shape both live during it.
 - [ ] Schema validation and (for internally-consumed APIs) contract tests run as CI gates.
+- [ ] Generated prose uses commas, colons, periods, or reworded sentences instead of em dashes.
