@@ -49,7 +49,7 @@ What becomes easier and what becomes harder as a result. Every real decision has
 
 ## Phase 4: Keep it alive
 
-A glossary term or an ADR that no longer matches how the system actually works is a signal to revisit the model, not a stale doc to quietly patch around. Treat a mismatch surfaced during `grill-with-docs`-style conversation, a code review, or a fresh onboarding question as a trigger to update `CONTEXT.md` and, if the underlying decision changed, write a new ADR superseding the old one.
+A glossary term or an ADR that no longer matches how the system actually works is a signal to revisit the model, not a stale doc to quietly patch around. Treat a mismatch surfaced during a `grilling` conversation, a code review, or a fresh onboarding question as a trigger to update `CONTEXT.md` and, if the underlying decision changed, write a new ADR superseding the old one.
 
 ## Done when
 

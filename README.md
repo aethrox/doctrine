@@ -2,7 +2,7 @@
 
 Software engineering discipline grounded in named primary standards (OWASP, ITIL, IETF RFCs, ISO, BABOK, SBAR, and more) instead of invented convention. 33 skills covering the software development lifecycle: TDD, code review, incident response, domain modeling, deployment, dependency management, and more.
 
-Two ways to use it, depending on your tool:
+Three ways to use it, depending on your tool:
 
 ## Option 1: Claude Code plugin
 
@@ -60,12 +60,12 @@ See [WORKFLOW.md](./WORKFLOW.md) for how the 33 skills relate to each other: the
 
 | Skill | Standard(s) it encodes | Covers |
 |---|---|---|
-| [release-versioning](./skills/release-versioning/SKILL.md) | Conventional Commits, Semantic Versioning, Keep a Changelog, trunk-based development | Commit classification, version bump, changelog entry, branching model |
-| [secure-coding](./skills/secure-coding/SKILL.md) | OWASP Top 10, SCA and secret-scanning practice | Injection classes, access control, secrets, dependency and supply-chain risk, safe error handling |
+| [release-versioning](./skills/release-versioning/SKILL.md) | [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/), [Semantic Versioning](https://semver.org/spec/v2.0.0.html), [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), trunk-based development | Commit classification, version bump, changelog entry, branching model |
+| [secure-coding](./skills/secure-coding/SKILL.md) | [OWASP Top 10](https://owasp.org/www-project-top-ten/), SCA and secret-scanning practice | Injection classes, access control, secrets, dependency and supply-chain risk, safe error handling |
 | [observability](./skills/observability/SKILL.md) | Google SRE golden signals, SLI/SLO/error budget, the RED method | Structured logging, the four golden signals, SLO definition, alert and runbook discipline |
 | [safe-deployment](./skills/safe-deployment/SKILL.md) | Progressive delivery, canary/blue-green/rolling, expand-contract migrations | Decoupling deploy from release, rollout strategy choice, rollback triggers defined up front |
 | [api-design-standards](./skills/api-design-standards/SKILL.md) | Microsoft/Google REST guidelines, consumer-driven contract testing | Resource/URL conventions, versioning strategy, backward-compatible vs breaking changes, contract testing |
-| [dependency-upgrade-management](./skills/dependency-upgrade-management/SKILL.md) | SBOM (CycloneDX/SPDX), RFC 8594/9745 deprecation headers, Dependabot/Renovate cadence practice | Dependency inventory, security vs routine vs major-upgrade lanes, deprecation windows, safe major-version migration |
+| [dependency-upgrade-management](./skills/dependency-upgrade-management/SKILL.md) | SBOM (CycloneDX/SPDX), [RFC 8594](https://www.rfc-editor.org/rfc/rfc8594.html)/[9745](https://www.rfc-editor.org/rfc/rfc9745.html) deprecation headers, Dependabot/Renovate cadence practice | Dependency inventory, security vs routine vs major-upgrade lanes, deprecation windows, safe major-version migration |
 | [incident-response](./skills/incident-response/SKILL.md) | Google SRE incident management guide, blameless postmortem culture | Severity/declaration, IC/comms/ops roles, mitigate-before-root-cause, blameless postmortem structure |
 | [test-strategy](./skills/test-strategy/SKILL.md) | Test data management practice, flaky-test quarantine practice | Synthetic vs anonymized production test data, flaky-test quarantine policy, integration/e2e boundary decisions |
 | [code-style-lint](./skills/code-style-lint/SKILL.md) | Established per-language formatters (gofmt, rustfmt, black, prettier), pre-commit/CI enforcement practice | Adopting the ecosystem standard, opinionated over configurable, pre-commit + CI enforcement layers, linting vs formatting |
@@ -85,18 +85,18 @@ See [WORKFLOW.md](./WORKFLOW.md) for how the 33 skills relate to each other: the
 | [handoff](./skills/handoff/SKILL.md) | SBAR (Situation-Background-Assessment-Recommendation) handoff communication standard | Structuring a handoff into Situation/Background/Assessment/Recommendation, naming what's already ruled out, confirming receipt via read-back |
 | [teach](./skills/teach/SKILL.md) | Bloom's Taxonomy, the worked-example effect and fading (cognitive load theory) | Placing the target and learner's cognitive level, opening with a fully worked example, fading scaffolding in stages, matching method to level, checking retention over fluency |
 | [to-questionnaire](./skills/to-questionnaire/SKILL.md) | Survey-design practice: leading/loaded question avoidance, closed vs. open question choice, balanced Likert-scale construction | Scoping the send (recipient, gap), choosing closed vs. open per question, avoiding leading/loaded/compound questions, balancing rating scales, assembling the document |
-| [wait-what](./skills/wait-what/SKILL.md) | ISO 24495-1 Plain Language standard (Relevant/Findable/Understandable/Actionable) | Recognizing a missed-explanation signal, re-pitching instead of repeating, applying all four RFUA principles, keeping vocabulary consistent, confirming it landed |
+| [wait-what](./skills/wait-what/SKILL.md) | [ISO 24495-1:2023](https://www.iso.org/standard/78907.html) Plain Language standard (Relevant/Findable/Understandable/Actionable) | Recognizing a missed-explanation signal, re-pitching instead of repeating, applying all four RFUA principles, keeping vocabulary consistent, confirming it landed |
 | [writing-for-agents](./skills/writing-for-agents/SKILL.md) | The Diátaxis documentation framework, adapted to agent-consumed documents | Classifying content as how-to/reference/explanation/tutorial, writing the how-to as the spine, structuring reference for lookup, relocating explanation to human-read artifacts, skipping tutorial voice |
 | [wizard](./skills/wizard/SKILL.md) | Standard operating procedure (SOP) / runbook documentation practice | Scoping to human-authority-only steps, one verifiable action per step, persisting captured values immediately, confirming before advancing, resumability after interruption |
-| [repo-secure](./skills/repo-secure/SKILL.md) | GitHub's maintainer security best-practices guidance | Inventorying current settings, judging which layers apply to this repo, enabling additive settings, confirming branch protection before applying it, recording deliberate skips |
-| [architecture-diagram](./skills/architecture-diagram/SKILL.md) | The C4 model (Simon Brown) | Picking the right zoom level for the audience, consistent box and arrow notation, committing as diagram as code, updating on structural change |
-| [explain-plainly](./skills/explain-plainly/SKILL.md) | ISO 24495-1 Plain Language standard, applied as a default posture | No unexplained jargon by default, framing from the reader's stake, maintaining a running glossary, verifying the explanation is actionable |
-| [repo-ship](./skills/repo-ship/SKILL.md) | Conventional Commits, applied at authoring time, plus repo-creation-as-first-class-step practice | Splitting commits by intent, naming a new repo for what it is, deciding visibility deliberately, filling description and topics at creation |
-| [project-groundwork](./skills/project-groundwork/SKILL.md) | ISO/IEC/IEEE 29148 requirements quality characteristics | Scanning a draft for ambiguity, inconsistency, incompleteness, and unverifiable claims, batching only the blocking gaps, writing decisions into the document and memory together |
+| [repo-secure](./skills/repo-secure/SKILL.md) | GitHub's maintainer security best-practices guidance | Inventorying current settings, judging which layers apply to this repo, confirming every setting before enabling it, with branch protection receiving the most scrutiny, recording deliberate skips |
+| [architecture-diagram](./skills/architecture-diagram/SKILL.md) | [The C4 model](https://c4model.com/) (Simon Brown) | Picking the right zoom level for the audience, consistent box and arrow notation, choosing to show, save, or commit a diagram as code based on what is authorized, updating on structural change |
+| [explain-plainly](./skills/explain-plainly/SKILL.md) | [ISO 24495-1:2023](https://www.iso.org/standard/78907.html) Plain Language standard, applied as a default posture | No unexplained jargon by default, framing from the reader's stake, maintaining a running glossary, verifying the explanation is actionable |
+| [repo-ship](./skills/repo-ship/SKILL.md) | [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/), applied at authoring time, plus repo-creation-as-first-class-step practice | Splitting commits by intent, naming a new repo for what it is, deciding visibility deliberately, filling description and topics at creation |
+| [project-groundwork](./skills/project-groundwork/SKILL.md) | [ISO/IEC/IEEE 29148:2018](https://www.iso.org/standard/72089.html) requirements quality characteristics | Scanning a draft for ambiguity, inconsistency, incompleteness, and unverifiable claims, batching only the blocking gaps, writing decisions into the document and the repository's existing decision record together |
 
 ## MCP server internals
 
-`mcp-server.js` is a plain Node.js (ESM, no build step) script: at startup it reads every `skills/<name>/SKILL.md`, parses the `name`/`description` out of the frontmatter, and registers each one as an MCP prompt whose content is the full skill text. Run `npm test` to smoke-test it. The test spawns the server, does a real MCP handshake, and asserts `prompts/list` returns all 33 skills with a name and description.
+`mcp-server.js` is a plain Node.js (ESM, no build step) script: at startup it reads every `skills/<name>/SKILL.md`, parses the `name`/`description` out of the frontmatter, and registers each one as an MCP prompt whose content is the full skill text. Run `npm test` to smoke-test it. The test validates every skill's frontmatter as real YAML, spawns the server and performs a real MCP handshake, asserts an exact `prompts/list` name match against the discovered skill set, and diffs each `prompts/get` response against its corresponding `SKILL.md` file byte-for-byte.
 
 ## Limitations
 
