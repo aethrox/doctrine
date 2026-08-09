@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "doctrine",
-      "description": "28 skills covering the software development lifecycle, each grounded in a real, named standard.",
+      "description": "33 skills covering the software development lifecycle, each grounded in a real, named standard.",
       "source": "./",
       "category": "development"
     }

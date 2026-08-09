@@ -21,6 +21,6 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.30.0",
-    "js-yaml": "^4.3.1"
+    "js-yaml": "^5.2.3"
   }
 }
