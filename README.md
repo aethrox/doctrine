@@ -2,8 +2,11 @@
 
 ![doctrine](./assets/banner-v6.png)
 
-[![GitHub Sponsors](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-EA4AAA?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/aethrox)
-[![Buy Me a Coffee](https://img.shields.io/badge/support-Buy%20Me%20a%20Coffee-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/aethrox)
+<p align="center">
+  <a href="./LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+  <a href="https://github.com/sponsors/aethrox"><img alt="GitHub Sponsors" src="https://img.shields.io/badge/sponsor-GitHub%20Sponsors-EA4AAA?logo=githubsponsors&logoColor=white"></a>
+  <a href="https://buymeacoffee.com/aethrox"><img alt="Buy Me a Coffee" src="https://img.shields.io/badge/support-Buy%20Me%20a%20Coffee-FFDD00?logo=buymeacoffee&logoColor=black"></a>
+</p>
 
 Software engineering discipline grounded in named primary standards (OWASP, ITIL, IETF RFCs, ISO, BABOK, SBAR, and more) instead of invented convention. 33 skills covering the software development lifecycle: TDD, code review, incident response, domain modeling, deployment, dependency management, and more.
 
@@ -21,6 +24,8 @@ Native install for Claude Code: the right skill is auto-invoked from its descrip
 Toggle it off later from `enabledPlugins` in `~/.claude/settings.json`, same as any other plugin.
 
 ## Option 2: MCP server (Claude Desktop, Cursor, Windsurf, Cline, and anything else that speaks MCP)
+
+Requires Node.js >= 18.
 
 Every skill is exposed as an MCP **prompt**: the same content, reachable from any MCP-capable client, not just Claude Code. Add it as a local MCP server:
 
@@ -106,6 +111,10 @@ See [WORKFLOW.md](./WORKFLOW.md) for how the 33 skills relate to each other: the
 ## Limitations
 
 None of the 33 skills have been battle-tested against a real release, incident, or security review yet; they're authored from standards but not yet validated in use. The MCP server has a smoke test (`npm test`) but hasn't been exercised against a real third-party MCP client (Cursor, Windsurf, etc.) yet, only a scripted handshake. This repo has no SECURITY.md or vulnerability reporting channel yet.
+
+## Contributing
+
+Adding a new skill or fixing an existing one? See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## License
 
