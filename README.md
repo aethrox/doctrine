@@ -1,5 +1,3 @@
-# doctrine
-
 ![doctrine](./assets/banner-v6.png)
 
 <p align="center">
