@@ -1,6 +1,6 @@
 # doctrine
 
-Software engineering discipline grounded in named primary standards (OWASP, ITIL, IETF RFCs, ISO, BABOK, SBAR, and more) instead of invented convention. 28 skills covering the software development lifecycle: TDD, code review, incident response, domain modeling, deployment, dependency management, and more.
+Software engineering discipline grounded in named primary standards (OWASP, ITIL, IETF RFCs, ISO, BABOK, SBAR, and more) instead of invented convention. 33 skills covering the software development lifecycle: TDD, code review, incident response, domain modeling, deployment, dependency management, and more.
 
 Two ways to use it, depending on your tool:
 
@@ -54,7 +54,7 @@ Re-run after pulling updates to resync.
 
 Every skill follows the same shape: a one-sentence defining constraint (the fact that makes it behave differently from the obvious default), a numbered set of phases with concrete, checkable rules, and a closing checklist. Each phase is grounded in a real, named industry standard rather than an invented convention, so the discipline can be traced back to its source.
 
-See [WORKFLOW.md](./WORKFLOW.md) for how the 28 skills relate to each other: the lifecycle they map to, which ones cross-reference which, and a worked example.
+See [WORKFLOW.md](./WORKFLOW.md) for how the 33 skills relate to each other: the lifecycle they map to, which ones cross-reference which, and a worked example.
 
 ## Skills
 
@@ -88,14 +88,19 @@ See [WORKFLOW.md](./WORKFLOW.md) for how the 28 skills relate to each other: the
 | [wait-what](./skills/wait-what/SKILL.md) | ISO 24495-1 Plain Language standard (Relevant/Findable/Understandable/Actionable) | Recognizing a missed-explanation signal, re-pitching instead of repeating, applying all four RFUA principles, keeping vocabulary consistent, confirming it landed |
 | [writing-for-agents](./skills/writing-for-agents/SKILL.md) | The Diátaxis documentation framework, adapted to agent-consumed documents | Classifying content as how-to/reference/explanation/tutorial, writing the how-to as the spine, structuring reference for lookup, relocating explanation to human-read artifacts, skipping tutorial voice |
 | [wizard](./skills/wizard/SKILL.md) | Standard operating procedure (SOP) / runbook documentation practice | Scoping to human-authority-only steps, one verifiable action per step, persisting captured values immediately, confirming before advancing, resumability after interruption |
+| [repo-secure](./skills/repo-secure/SKILL.md) | GitHub's maintainer security best-practices guidance | Inventorying current settings, judging which layers apply to this repo, enabling additive settings, confirming branch protection before applying it, recording deliberate skips |
+| [architecture-diagram](./skills/architecture-diagram/SKILL.md) | The C4 model (Simon Brown) | Picking the right zoom level for the audience, consistent box and arrow notation, committing as diagram as code, updating on structural change |
+| [explain-plainly](./skills/explain-plainly/SKILL.md) | ISO 24495-1 Plain Language standard, applied as a default posture | No unexplained jargon by default, framing from the reader's stake, maintaining a running glossary, verifying the explanation is actionable |
+| [repo-ship](./skills/repo-ship/SKILL.md) | Conventional Commits, applied at authoring time, plus repo-creation-as-first-class-step practice | Splitting commits by intent, naming a new repo for what it is, deciding visibility deliberately, filling description and topics at creation |
+| [project-groundwork](./skills/project-groundwork/SKILL.md) | ISO/IEC/IEEE 29148 requirements quality characteristics | Scanning a draft for ambiguity, inconsistency, incompleteness, and unverifiable claims, batching only the blocking gaps, writing decisions into the document and memory together |
 
 ## MCP server internals
 
-`mcp-server.js` is a plain Node.js (ESM, no build step) script: at startup it reads every `skills/<name>/SKILL.md`, parses the `name`/`description` out of the frontmatter, and registers each one as an MCP prompt whose content is the full skill text. Run `npm test` to smoke-test it. The test spawns the server, does a real MCP handshake, and asserts `prompts/list` returns all 28 skills with a name and description.
+`mcp-server.js` is a plain Node.js (ESM, no build step) script: at startup it reads every `skills/<name>/SKILL.md`, parses the `name`/`description` out of the frontmatter, and registers each one as an MCP prompt whose content is the full skill text. Run `npm test` to smoke-test it. The test spawns the server, does a real MCP handshake, and asserts `prompts/list` returns all 33 skills with a name and description.
 
 ## Limitations
 
-None of the 28 skills have been battle-tested against a real release, incident, or security review yet; they're authored from standards but not yet validated in use. The MCP server has a smoke test (`npm test`) but hasn't been exercised against a real third-party MCP client (Cursor, Windsurf, etc.) yet, only a scripted handshake. This repo has no SECURITY.md or vulnerability reporting channel yet.
+None of the 33 skills have been battle-tested against a real release, incident, or security review yet; they're authored from standards but not yet validated in use. The MCP server has a smoke test (`npm test`) but hasn't been exercised against a real third-party MCP client (Cursor, Windsurf, etc.) yet, only a scripted handshake. This repo has no SECURITY.md or vulnerability reporting channel yet.
 
 ## License
 

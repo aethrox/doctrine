@@ -1,6 +1,6 @@
 # Workflow
 
-How the 28 skills relate to each other: when to reach for which one, and roughly what order they tend to run in on a real piece of work. This is not a rigid pipeline. Skills that do not apply to a given task are skipped, and the lifecycle loops rather than ending at release.
+How the 33 skills relate to each other: when to reach for which one, and roughly what order they tend to run in on a real piece of work. This is not a rigid pipeline. Skills that do not apply to a given task are skipped, and the lifecycle loops rather than ending at release.
 
 ## The lifecycle at a glance
 
@@ -34,6 +34,7 @@ The work is unclear, too big for one sitting, or nobody has agreed yet on what i
 | [`research`](./skills/research/SKILL.md) | A claim needs verifying against a primary source before anyone relies on it, not a live conversation. |
 | [`domain-modeling`](./skills/domain-modeling/SKILL.md) | Vocabulary is inconsistent, or a decision with lasting consequences needs recording. Underlies almost every other skill: most of them point back here for terminology and ADRs. |
 | [`triage`](./skills/triage/SKILL.md) | A bug report or feature request just arrived and needs a priority before anyone commits to it. |
+| [`project-groundwork`](./skills/project-groundwork/SKILL.md) | A draft spec or README already exists but has contradictions or unresolved TBDs. Scans it against IEEE 29148's quality characteristics, then hands the blocking gaps to `grilling` and the resolved decisions to `domain-modeling`. |
 
 `wayfinder` typically hands off to `grilling`/`to-questionnaire`/`research` for the individual decisions it stages, and everything here writes into `domain-modeling`'s glossary and ADRs as it settles.
 
@@ -56,6 +57,7 @@ Before code gets written for real, the shape of it gets settled.
 | [`prototype`](./skills/prototype/SKILL.md) | One specific design or technical question needs answering before committing to an approach. Throwaway code, not production code. |
 | [`codebase-design`](./skills/codebase-design/SKILL.md) | A new module or class needs an interface, or an existing one feels shallow. Depth as the metric, the deletion test, designing it twice. |
 | [`api-design-standards`](./skills/api-design-standards/SKILL.md) | An API's shape is being decided: resource conventions, versioning, what counts as a breaking change. |
+| [`architecture-diagram`](./skills/architecture-diagram/SKILL.md) | The overall structure needs drawing for a reader who cannot assemble it from prose. The C4 model picks the zoom level (context, container, component, code) before anything gets drawn. |
 
 ### 4. Build
 
@@ -79,8 +81,10 @@ Before code gets written for real, the shape of it gets settled.
 | Skill | Reach for it when |
 |---|---|
 | [`release-versioning`](./skills/release-versioning/SKILL.md) | Cutting a release: classifying commits, bumping the version, writing the changelog entry. |
+| [`repo-ship`](./skills/repo-ship/SKILL.md) | Commits are being made while work is in progress, or a brand-new repo is being created. Splits commits by intent as they happen; separate from `release-versioning`, which classifies commits already made for a release already shipping. |
 | [`safe-deployment`](./skills/safe-deployment/SKILL.md) | A risky change needs a rollout strategy. Decouples deploy from release, defines the rollback trigger before shipping, not during the incident. |
 | [`dependency-upgrade-management`](./skills/dependency-upgrade-management/SKILL.md) | A dependency needs upgrading or deprecating: security patches on a fast lane, routine and major upgrades on a slower one, a stated deprecation window. |
+| [`repo-secure`](./skills/repo-secure/SKILL.md) | A repo needs its own security settings audited: SECURITY.md, secret scanning, Dependabot, code scanning, branch protection. Scoped to repo configuration, distinct from `secure-coding` (code-level) and `dependency-upgrade-management` (upgrade cadence). |
 
 ### 7. Operate & respond
 
@@ -108,6 +112,7 @@ These do not belong to one phase. They get reached for whenever the situation ma
 | Skill | Reach for it when |
 |---|---|
 | [`teach`](./skills/teach/SKILL.md) | Something needs explaining so it is actually retained, not just told once. Bloom's level, worked-example fading. |
+| [`explain-plainly`](./skills/explain-plainly/SKILL.md) | The audience is outside the technical team. Default plain-language posture and a maintained glossary, not a recovery move; separate from `wait-what` below. |
 | [`wait-what`](./skills/wait-what/SKILL.md) | The last explanation clearly did not land. Re-pitch with a different framing, never repeat the same one louder. |
 | [`writing-for-agents`](./skills/writing-for-agents/SKILL.md) | Writing or editing a skill, `AGENTS.md`, or `CLAUDE.md` itself. Diátaxis, adapted for a document an agent re-reads instead of a human who learns once. |
 | [`wizard`](./skills/wizard/SKILL.md) | A procedure needs a human's hands or authority at every step: credentials, an unfamiliar dashboard, a one-off migration. |
@@ -135,15 +140,20 @@ Every explicit `` `skill-name` `` reference found inside another skill's own `SK
 | Skill | References |
 |---|---|
 | `api-design-standards` | `dependency-upgrade-management` |
+| `architecture-diagram` | `domain-modeling` |
 | `code-review` | `code-style-lint`, `tdd` |
 | `codebase-design` | `code-review`, `tdd` |
 | `dependency-upgrade-management` | `safe-deployment`, `secure-coding`, `tdd` |
 | `diagnosing-bugs` | `secure-coding`, `tdd` |
+| `explain-plainly` | `wait-what` |
 | `grilling` | `research` |
 | `handoff` | `incident-response` |
 | `improve-codebase-architecture` | `codebase-design`, `domain-modeling` |
 | `incident-response` | `diagnosing-bugs`, `observability`, `safe-deployment` |
 | `observability` | `diagnosing-bugs`, `secure-coding` |
+| `project-groundwork` | `domain-modeling`, `grilling`, `wayfinder` |
+| `repo-secure` | `dependency-upgrade-management`, `secure-coding` |
+| `repo-ship` | `release-versioning` |
 | `resolving-merge-conflicts` | `tdd` |
 | `safe-deployment` | `observability` |
 | `secure-coding` | `diagnosing-bugs` |
