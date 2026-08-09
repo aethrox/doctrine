@@ -1,0 +1,3 @@
+interface:
+  display_name: "Repo Ship"
+  short_description: "Commit-by-intent discipline and repo metadata at creation"
