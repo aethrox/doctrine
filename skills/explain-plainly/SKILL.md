@@ -1,23 +1,23 @@
 ---
 name: explain-plainly
-description: Default to explaining technical work in plain language for a non-technical audience, and maintain a running glossary as jargon accumulates. Use whenever an explanation is aimed at someone outside the technical team, or whenever jargon would otherwise go unexplained. Distinct from wait-what, which is a recovery move after an explanation already failed, not a default posture.
+description: Default to explaining technical work in plain language for a non-technical audience, using an existing project glossary only when a persistent document is already in scope. Use whenever an explanation is aimed at someone outside the technical team, or whenever jargon would otherwise go unexplained. Distinct from wait-what, which is a recovery move after an explanation already failed, not a default posture.
 ---
 
 # Explain Plainly
 
-Most technical writing defaults to precision for an audience that already has the vocabulary, then gets awkwardly simplified after someone gets lost. This skill's defining constraint, from ISO 24495-1's plain language principles: plain framing is the default posture for a non-technical audience, not a fallback reached for only after confusion is signaled. This is the same standard `wait-what` uses, applied differently: `wait-what` triggers reactively, after a specific explanation has already failed to land; this skill is the proactive default for anything explained to someone outside the technical team, and it owns a persistent glossary artifact that `wait-what` does not.
+Most technical writing defaults to precision for an audience that already has the vocabulary, then gets awkwardly simplified after someone gets lost. This skill's defining constraint, from ISO 24495-1's plain language principles: plain framing is the default posture for a non-technical audience, not a fallback reached for only after confusion is signaled. This is the same standard `wait-what` uses, applied differently: `wait-what` triggers reactively, after a specific explanation has already failed to land; this skill is the proactive default for anything explained to someone outside the technical team. When a project already has a persistent glossary owned by `domain-modeling`, this skill uses that artifact rather than creating a separate one.
 
 ## Phase 1: Default to no unexplained jargon
 
-Assume the reader does not already hold the vocabulary. Define a technical term inline the first time it appears in a given piece of writing, in a plain clause the reader would not need to look up, or route it to the glossary (Phase 3) if a full definition would derail the sentence it appears in. Do not wait for a confusion signal before doing this; treat unexplained jargon as a default defect, not an edge case.
+Assume the reader does not already hold the vocabulary. Define a technical term inline the first time it appears in a given piece of writing, in a plain clause the reader would not need to look up. If a persistent project document is already in scope and the repository has an existing glossary convention, route the term there under Phase 3 when a full definition would derail the sentence. Do not wait for a confusion signal before doing this; treat unexplained jargon as a default defect, not an edge case.
 
 ## Phase 2: Frame from the reader's stake, not the mechanism
 
 Lead with what changes for the reader (what they can now do, what risk is gone, what decision this enables), not with how the underlying system works. A reader outside the technical team rarely needs the mechanism to act on the information; they need to know what it means for them. Explain the mechanism only when the reader's own next decision actually depends on it.
 
-## Phase 3: Maintain a running glossary
+## Phase 3: Use an existing glossary only when it is in scope
 
-Keep a glossary file (`GLOSSARY.md` or the project's existing equivalent) that accumulates terms as they get used without a full inline definition. Add a term the moment it is used this way, not in a later cleanup pass; a glossary maintained after the fact drifts out of sync with what was actually written. Once a term is in the glossary, later explanations can reference it by name instead of re-defining it each time.
+For an ordinary chat explanation, explain terms inline and do not create or edit a glossary. Update a glossary only when a persistent project document is already in scope for the current task and an existing repository convention authorizes the write, such as `domain-modeling`'s `CONTEXT.md` or equivalent. If no such convention exists, do not invent `GLOSSARY.md`; keep the definition inline. When the convention does exist, consume its established terms and add an authorized entry there rather than maintaining a separate glossary.
 
 ## Phase 4: Verify against the Actionable principle
 
@@ -29,8 +29,8 @@ If a specific explanation has already been given and the reader's response signa
 
 ## Done when
 
-- [ ] Every technical term is either defined inline on first use or routed to the glossary, without waiting for a confusion signal.
+- [ ] Every technical term is defined inline on first use, or routed to an existing authorized glossary when a persistent project document is already in scope, without waiting for a confusion signal.
 - [ ] The explanation leads with what it means for the reader, not with the underlying mechanism, unless the mechanism is what the reader's own decision depends on.
-- [ ] The glossary was updated as terms were used, not in a later pass.
+- [ ] When an existing glossary convention and the current task authorized an update, that artifact was updated as terms were used; otherwise no glossary was created or edited.
 - [ ] The explanation resolves into something actionable for the reader, not just an accurate description.
 - [ ] A reactive repair after a failed explanation was handed to `wait-what`, not redone here.

@@ -13,6 +13,7 @@ A model's vocabulary is the code's vocabulary. The same word means the same thin
 - Use the agreed term **everywhere**: class names, variable names, module boundaries, commit messages, conversation, and documentation. If the code says `Customer` and the domain experts say `Client`, one of the two is wrong; reconcile it rather than letting code and conversation quietly diverge into two dialects.
 - A term needing a qualifier every time it's spoken ("the *shipping* order, not the *purchase* order") is the tell that two concepts are sharing one word. Split the word, or draw a boundary (Phase 2) so each side keeps its own meaning without collision.
 - Record the language in a living glossary (a `CONTEXT.md` or equivalent) that a new contributor reads before writing code in the area; the language exists to lower everyone's cognitive load, which only works if it's written down somewhere more durable than institutional memory.
+- `domain-modeling` owns the project's glossary or vocabulary artifact (`CONTEXT.md` or equivalent). `explain-plainly` should consume its terms or propose entries into that artifact rather than maintaining a separate glossary.
 
 ## Phase 2: Draw bounded contexts
 

@@ -1,6 +1,6 @@
 ---
 name: release-versioning
-description: Discipline for commit messages, version bumps, and changelogs, Conventional Commits classify every change, SemVer computes the version from those commits, Keep a Changelog renders the result. Use when the user asks to cut a release, bump a version, write a changelog, decide if a change is a major/minor/patch, choose a branching model, or when committing on a project that ships versioned releases.
+description: Discipline for release classification, version bumps, and changelogs, Conventional Commits classify the release range, SemVer computes the version from those commits, Keep a Changelog renders the result. Use when the user asks to cut a release, bump a version, write a changelog, decide if a change is a major/minor/patch, or choose a branching model for versioned releases.
 ---
 
 # Release Versioning

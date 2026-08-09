@@ -1,6 +1,6 @@
 ---
 name: project-groundwork
-description: Check an existing draft specification or README against a fixed set of quality characteristics, batch only the genuinely blocking gaps into one round of questions, and write each resolved decision into the source document and project memory in the same step. Use when a draft spec or architecture doc has sections that disagree with each other, still carries TBDs, or needs its open points settled before implementation starts.
+description: Check an existing draft specification or README against a fixed set of quality characteristics, batch only the genuinely blocking gaps into one round of questions, and write each resolved decision into the source document plus the repository's existing decision-recording artifact when one exists. Use when a draft spec or architecture doc has sections that disagree with each other, still carries TBDs, or needs its open points settled before implementation starts.
 ---
 
 # Project Groundwork
@@ -32,9 +32,9 @@ Not every violation found in Phase 1 blocks implementation from starting. A genu
 
 Run `grilling`'s frontier-round technique on the blocking gaps only: ask them together, with a recommended answer where one exists, rather than trickling questions out one at a time or holding the whole document hostage to a single unresolved point.
 
-## Phase 4: Write the answer into the document and memory in the same step
+## Phase 4: Write the answer into the document and existing decision record
 
-As each blocking gap resolves, edit the source document directly so the contradiction or TBD is actually gone, not just answered in conversation, and record the decision in project memory in the same pass. A decision that only lives in the conversation is lost the moment the session ends; a decision that only lives in memory leaves the document still internally inconsistent for the next reader.
+As each blocking gap resolves, edit the source document directly so the contradiction or TBD is actually gone, not just answered in conversation. If the repository already has a convention for recording decisions, such as `domain-modeling`'s `CONTEXT.md`, an ADR directory, or another discovered artifact, record the decision there in the same pass. If no such convention exists, say so and update only the source document; do not invent a new memory file as a fallback. A decision that only lives in the conversation is lost the moment the session ends; a decision that only lives in a separate record leaves the document still internally inconsistent for the next reader.
 
 ## Phase 5: Confirm the document now reads as settled
 
@@ -45,5 +45,5 @@ Re-check the document against the four characteristics from Phase 1 after the ed
 - [ ] The draft was checked against unambiguous, consistent, complete, and verifiable, with concrete violations listed by location.
 - [ ] Violations were sorted into blocking and non-blocking before any question was asked.
 - [ ] Only the blocking gaps were batched into one round, using `grilling`'s frontier technique rather than a separate interview method.
-- [ ] Each resolved answer was written into the source document and project memory in the same step.
+- [ ] Each resolved answer was written into the source document and, when one already existed, the repository's decision-recording artifact in the same step; if none existed, that absence was stated and no new memory file was invented.
 - [ ] The document was re-checked against the four characteristics after edits, and reads as settled for a cold reader.
