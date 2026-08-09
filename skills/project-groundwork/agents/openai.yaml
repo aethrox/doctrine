@@ -1,0 +1,3 @@
+interface:
+  display_name: "Project Groundwork"
+  short_description: "IEEE 29148 quality scan for an existing draft spec"
