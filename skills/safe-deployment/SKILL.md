@@ -32,6 +32,7 @@ Write down, before the deploy starts, not during an incident:
 - **The specific signals that trigger a rollback**: reuse the golden signals from `observability` (error rate above X%, latency p99 above Y, saturation above Z) rather than "if it looks bad." A vague trigger gets argued about mid-incident instead of executed.
 - **Who or what executes it.** Prefer an automated rollback (the deploy pipeline watches the signal and reverts on breach) over a manual one: automated analysis catches problems in minutes; a human noticing and deciding takes longer, exactly when speed matters most.
 - **That rollback is actually fast.** A rollback strategy that takes as long as forward-fixing isn't a safety net: verify the previous version can be restored (traffic cut back, flag flipped off) in the time budget the trigger implies, before relying on it.
+- **Write the deploy plan without em dashes**: use a comma, colon, period, or a reworded sentence instead.
 
 ## Phase 4: Execute and verify
 

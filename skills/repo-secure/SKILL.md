@@ -41,3 +41,4 @@ A setting that was considered and not enabled for a real reason (a solo repo wit
 - [ ] Every enabled setting was explicitly confirmed first; branch protection's restrictions received the most scrutiny and were stated plainly.
 - [ ] A pure audit or read-only request stayed read-only.
 - [ ] Anything deliberately skipped is recorded with its reason, not left unexplained.
+- [ ] Generated prose uses commas, colons, periods, or reworded sentences instead of em dashes.

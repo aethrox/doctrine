@@ -20,7 +20,7 @@ Content of one kind buried inside another is where documents go stale and hard t
 
 ## Phase 2: Write the how-to as the spine
 
-The numbered phases or steps are what the agent actually executes, in order, each ending on a condition clear enough to tell done from not-done. This is the tier that earns the top of the document; everything else exists to support it, not to compete with it for attention.
+The numbered phases or steps are what the agent actually executes, in order, each ending on a condition clear enough to tell done from not-done. This is the tier that earns the top of the document; everything else exists to support it, not to compete with it for attention. Write generated prose without em dashes, using a comma, colon, period, or a reworded sentence instead.
 
 ## Phase 3: Push reference behind structure, not narrative
 

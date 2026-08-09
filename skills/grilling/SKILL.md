@@ -19,6 +19,7 @@ Ask the whole frontier in one round, not one question at a time, batching respec
 
 - State it precisely enough that a specific answer, not a restatement of the question, is the expected response.
 - Offer a recommended answer where one exists: a default the user can accept, correct, or override, rather than a blank slate they have to fill from nothing.
+- Write questions and their surrounding prose without em dashes: use a comma, colon, period, or a reworded sentence instead.
 
 Wait for the round's answers before computing the next round. Each answer can unblock questions that depended on it; recompute the frontier fresh each round rather than pre-planning every round up front, since an early answer can make a later planned question moot or reveal a new one.
 

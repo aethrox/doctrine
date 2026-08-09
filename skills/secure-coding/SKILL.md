@@ -57,3 +57,4 @@ Broken access control is the single most common real-world vulnerability class. 
 - [ ] No secret is a literal anywhere in the diff, including test fixtures and comments.
 - [ ] Any new dependency has been audited for known CVEs and is pinned.
 - [ ] No error path leaks internals to the caller, and no log line carries a secret.
+- [ ] Generated prose uses commas, colons, periods, or reworded sentences instead of em dashes.

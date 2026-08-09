@@ -46,6 +46,7 @@ What becomes easier and what becomes harder as a result. Every real decision has
 - An ADR describes **why**, not **how**: implementation detail belongs in code and its comments, not the record of the decision that led there.
 - If the length pushes past one page, it's usually documenting more than one decision; split it.
 - A superseded decision is never edited in place; write a new ADR, mark the old one's status as `Superseded by <new ADR>`, and leave the original text intact. The history of *why things changed* is as valuable as the current state.
+- Write ADR prose without em dashes: use a comma, colon, period, or a reworded sentence instead.
 
 ## Phase 4: Keep it alive
 

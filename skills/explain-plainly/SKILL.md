@@ -9,7 +9,7 @@ Most technical writing defaults to precision for an audience that already has th
 
 ## Phase 1: Default to no unexplained jargon
 
-Assume the reader does not already hold the vocabulary. Define a technical term inline the first time it appears in a given piece of writing, in a plain clause the reader would not need to look up. If a persistent project document is already in scope and the repository has an existing glossary convention, route the term there under Phase 3 when a full definition would derail the sentence. Do not wait for a confusion signal before doing this; treat unexplained jargon as a default defect, not an edge case.
+Assume the reader does not already hold the vocabulary. Define a technical term inline the first time it appears in a given piece of writing, in a plain clause the reader would not need to look up. If a persistent project document is already in scope and the repository has an existing glossary convention, route the term there under Phase 3 when a full definition would derail the sentence. Do not wait for a confusion signal before doing this; treat unexplained jargon as a default defect, not an edge case. Write the explanation without em dashes, using a comma, colon, period, or a reworded sentence instead.
 
 ## Phase 2: Frame from the reader's stake, not the mechanism
 

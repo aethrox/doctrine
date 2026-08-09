@@ -41,7 +41,7 @@ Where a question needs a rating rather than a free answer, build a proper Likert
 
 ## Phase 5: Assemble the document
 
-Order questions most-important-first: an async questionnaire may only get one pass before the recipient stops. Group under theme headings once there are more than a handful. For each question: state it as one idea, leave an answer stub directly beneath, and add a one-line "why this matters" only where the question could otherwise be misread or invite a throwaway answer. Open with a short context paragraph orienting a recipient who wasn't in the sender's head, and close with a catch-all for anything not asked but worth knowing.
+Order questions most-important-first: an async questionnaire may only get one pass before the recipient stops. Group under theme headings once there are more than a handful. For each question: state it as one idea, leave an answer stub directly beneath, and add a one-line "why this matters" only where the question could otherwise be misread or invite a throwaway answer. Open with a short context paragraph orienting a recipient who wasn't in the sender's head, and close with a catch-all for anything not asked but worth knowing. Write the questionnaire without em dashes, using a comma, colon, period, or a reworded sentence instead.
 
 ## Done when
 

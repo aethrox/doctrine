@@ -23,6 +23,7 @@ The failed explanation's words, structure, and level of detail didn't work; reus
 - **Findable**: lead with the point itself, not the reasoning that arrives at it. A reader who's already confused won't survive a long windup before the answer appears.
 - **Understandable**: plain words over jargon, short sentences, one idea per sentence. If a technical term is unavoidable, define it inline rather than assuming it survived from the first attempt.
 - **Actionable**: end with what the reader should now do, believe, or decide. An explanation that's merely accurate but doesn't resolve into a next step leaves the reader exactly as stuck as before.
+- **Punctuation**: write the re-pitch without em dashes, using a comma, colon, period, or a reworded sentence instead.
 
 ## Phase 4: Keep vocabulary consistent
 

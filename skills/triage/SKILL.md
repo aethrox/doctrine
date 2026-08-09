@@ -49,6 +49,8 @@ Every triaged item lands in exactly one state:
 - **`scheduled`**: verified and scored, but deliberately queued behind higher-priority work; note the P-number so re-triage later starts from the same reasoning instead of from scratch.
 - **`wontfix`**: rejected (state why) or already implemented (point to where it lives). The latter is a different reason than rejection and shouldn't be logged the same way, since it means the request was valid but redundant.
 
+Write the triage rationale and routing note without em dashes, using a comma, colon, period, or a reworded sentence instead.
+
 ## Done when
 
 - [ ] The item is tagged bug or enhancement before any scoring happens.

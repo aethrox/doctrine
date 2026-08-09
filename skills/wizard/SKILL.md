@@ -18,6 +18,7 @@ Following SOP discipline, each step is a single, unambiguous action, not a parag
 - State exactly what to do: which URL to open, which button to click, which value to copy.
 - State the expected outcome, so the human can tell they did it right before moving on, not just that they did *something*.
 - Never bundle two decisions into one step: a step that says "configure X and also decide Y" is two steps wearing one number.
+- Write each instruction without em dashes: use a comma, colon, period, or a reworded sentence instead.
 
 ## Phase 3: Capture and persist immediately
 

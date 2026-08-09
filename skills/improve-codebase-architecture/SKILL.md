@@ -50,7 +50,7 @@ For each surfaced candidate, state:
 - **Proposed deepening**: what would change, described in `codebase-design` terms.
 - **Cost of leaving it** vs. **cost of fixing it**: the actual tradeoff, since a Reckless/Deliberate finding with a low leave-cost may still not be worth touching now.
 
-Order candidates by leave-cost, not by how easy the fix is; an easy fix for a low-cost problem is not more urgent than a harder fix for a problem actively slowing the team down.
+Order candidates by leave-cost, not by how easy the fix is; an easy fix for a low-cost problem is not more urgent than a harder fix for a problem actively slowing the team down. Write the findings without em dashes, using a comma, colon, period, or a reworded sentence instead.
 
 ## Phase 5: Record the decision
 

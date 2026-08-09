@@ -44,7 +44,7 @@ Practical notes: a decision point becomes a diamond node with its branches as la
 
 ## Phase 4: Write the surrounding doc
 
-Give each diagram: one or two sentences of setup naming what it is about to show and why it matters, the diagram itself, and a short caption naming the one claim the diagram makes rather than restating its boxes in prose. For a saved or committed diagram, place it in `docs/architecture.md` or the README for a small project, and link it from the README if it lives elsewhere.
+Give each diagram: one or two sentences of setup naming what it is about to show and why it matters, the diagram itself, and a short caption naming the one claim the diagram makes rather than restating its boxes in prose. For a saved or committed diagram, place it in `docs/architecture.md` or the README for a small project, and link it from the README if it lives elsewhere. Write the surrounding prose without em dashes, using a comma, colon, period, or a reworded sentence instead.
 
 ## Phase 5: Update on structural change, not on every commit
 

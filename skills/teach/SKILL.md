@@ -15,7 +15,7 @@ Gauge where the learner already stands (what they can already do without help) s
 
 ## Phase 2: Start from a fully worked example
 
-For anything above pure recall, open with a complete, worked-through instance of the skill, not a partially-blanked problem, not "try it and I'll correct you." Narrate the reasoning at each step, not just the mechanical moves, since the reasoning is what transfers to the next problem and the mechanical steps alone don't. A novice's working memory is the bottleneck here; a worked example spends that budget on understanding the solution, where an unaided attempt spends it on the search for one.
+For anything above pure recall, open with a complete, worked-through instance of the skill, not a partially-blanked problem, not "try it and I'll correct you." Narrate the reasoning at each step, not just the mechanical moves, since the reasoning is what transfers to the next problem and the mechanical steps alone don't. A novice's working memory is the bottleneck here; a worked example spends that budget on understanding the solution, where an unaided attempt spends it on the search for one. Write the explanation without em dashes, using a comma, colon, period, or a reworded sentence instead.
 
 ## Phase 3: Fade the scaffolding
 

@@ -42,3 +42,4 @@ The module boundary chosen here **is** the seam `tdd` tests against; a seam plac
 - [ ] No single piece of domain knowledge requires touching two or more modules to change.
 - [ ] None of Phase 3's red flags describe the design as shipped.
 - [ ] A genuinely new module boundary was compared against at least one real alternative before being committed to.
+- [ ] Generated prose uses commas, colons, periods, or reworded sentences instead of em dashes.

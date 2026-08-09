@@ -50,6 +50,7 @@ A reviewer's attention is roughly constant, not scaling with diff size; a 2,000-
 - Respond promptly: a review that sits unstarted for days blocks the author's whole chain of follow-up work, not just this one change.
 - Distinguish an explicit requirement ("this needs to change before merge") from a suggestion ("consider X, up to you") in the comment itself; an author guessing which kind of comment they're reading either over-blocks on a suggestion or under-fixes a requirement.
 - Reviews are also where senior and junior engineers transfer knowledge in both directions; treat a comment as a chance to explain the reasoning, not just deliver the verdict.
+- Write review comments without em dashes: use a comma, colon, period, or a reworded sentence instead.
 
 ## Done when
 
