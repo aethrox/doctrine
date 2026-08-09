@@ -1,0 +1,24 @@
+{
+  "name": "doctrine-mcp",
+  "version": "1.0.0",
+  "description": "MCP server exposing the doctrine engineering-skills set as prompts for any MCP-capable client (Claude Desktop, Cursor, Windsurf, Cline, and more).",
+  "type": "module",
+  "license": "MIT",
+  "repository": "https://github.com/aethrox/doctrine",
+  "bin": {
+    "doctrine-mcp": "./mcp-server.js"
+  },
+  "scripts": {
+    "test": "node smoke-test.mjs"
+  },
+  "files": [
+    "mcp-server.js",
+    "skills"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0"
+  }
+}
