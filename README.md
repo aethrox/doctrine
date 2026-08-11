@@ -115,6 +115,7 @@ None of the 33 skills have been battle-tested against a real release, incident, 
 ## Donate
 
 <p align="center">
+  <a href="https://buymeacoffee.com/aethrox"><img alt="BuyMeACoffee" src="https://img.shields.io/badge/buy_me_a_coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black"></a>
   <a href="https://etherscan.io/address/0x090f4d8d313bb12c13c63c8b6a7acba19af94490"><img alt="Ethereum" src="https://img.shields.io/badge/ETH-donate-3C3C3D?logo=ethereum&logoColor=white"></a>
   <a href="https://solscan.io/account/9PduqxAVxPp78heUG7KKAVpSbPAYa3HjwN3r3JnzcE2X"><img alt="Solana" src="https://img.shields.io/badge/SOL-donate-9945FF?logo=solana&logoColor=white"></a>
   <a href="https://mempool.space/address/bc1q4vzs920q3x7d76eq2fu3agq4gxywu5z05aqf86"><img alt="Bitcoin" src="https://img.shields.io/badge/BTC-donate-F7931A?logo=bitcoin&logoColor=white"></a>
