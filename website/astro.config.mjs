@@ -47,7 +47,7 @@ export default defineConfig({
 				},
 				{
 					label: 'Skills',
-					translations: { tr: 'Skill Kataloğu' },
+					translations: { tr: "Skill'ler" },
 					items: [{ slug: 'skill-catalog' }],
 				},
 				{

@@ -1,6 +1,13 @@
 ---
 import { getCollection } from 'astro:content';
 
+interface Props {
+	locale?: 'en' | 'tr';
+}
+
+const { locale = 'en' } = Astro.props;
+const isTurkish = locale === 'tr';
+
 const categoryDescriptions = {
 	'Clarify & Collaborate': 'Make unclear work discussable, teachable, and transferable.',
 	'Discover & Design': 'Turn uncertainty into decisions, specifications, and coherent designs.',
@@ -8,6 +15,65 @@ const categoryDescriptions = {
 	'Ship & Operate': 'Release changes safely and keep running systems understandable.',
 	'Extend Doctrine': 'Write agent-facing instructions that preserve Doctrine\'s boundaries.',
 };
+
+const turkishCategories = {
+	'Clarify & Collaborate': {
+		label: 'Netleştir ve İş Birliği Yap',
+		description: 'Belirsiz işleri konuşulabilir, öğretilebilir ve devredilebilir hâle getirin.',
+	},
+	'Discover & Design': {
+		label: 'Keşfet ve Tasarla',
+		description: 'Belirsizliği kararlara, tanımlara ve tutarlı tasarımlara dönüştürün.',
+	},
+	'Build & Verify': {
+		label: 'Geliştir ve Doğrula',
+		description: 'Kodu kanıta dayanarak uygulayın, test edin, teşhis edin, inceleyin ve iyileştirin.',
+	},
+	'Ship & Operate': {
+		label: 'Yayınla ve İşlet',
+		description: 'Değişiklikleri güvenle yayınlayın ve çalışan sistemleri anlaşılır tutun.',
+	},
+	'Extend Doctrine': {
+		label: "Doctrine'ı Genişlet",
+		description: "Doctrine'ın sınırlarını koruyan, ajanlara yönelik talimatlar yazın.",
+	},
+} as const;
+
+const turkishSkillDescriptions = {
+	'api-design-standards': 'Kaynak ve URL kuralları, sürümleme, geriye uyumluluk ve sözleşme testleriyle tutarlı API tasarlama disiplinidir. Yeni bir uç nokta tasarlarken veya mevcut bir API sözleşmesini değiştirirken kullanın.',
+	'architecture-diagram': 'Bir sistemin mimarisini doğru ayrıntı düzeyinde ve diagram-as-code yaklaşımıyla görünür kılar. Mimariyi, bileşen akışını, veri akışını veya karar yolunu açıklamanız gerektiğinde kullanın.',
+	'code-review': 'Kod sağlığını iyileştirme eşiğine, somut kod kokularına ve küçük PR’lara dayanan inceleme disiplinidir. Bir pull request veya diff incelerken ve geri bildirim verirken kullanın.',
+	'code-style-lint': 'Biçimlendirmeyi ekosistemin standart aracıyla otomatikleştirir; görünümü denetleyen formatter ile gerçek kusurları bulan linter’ı ayırır. Proje araçlarını kurarken veya stil tartışmalarını CI’a taşırken kullanın.',
+	'codebase-design': 'Basit bir arayüzün arkasında güçlü işlev sunan derin modüller ve bilgi gizleme ilkeleriyle tasarım yapar. Modül sınırı belirlerken, sınıfları bölüp birleştirirken veya gereksiz karmaşıklığı incelerken kullanın.',
+	'dependency-upgrade-management': 'Bağımlılık envanteri, güvenlik güncellemeleri ve açık bir kullanımdan kaldırma süresiyle yükseltmeleri güvenle yönetir. Dependabot veya Renovate PR’larını değerlendirirken ve bir özelliği kaldırmayı planlarken kullanın.',
+	'diagnosing-bugs': 'Sistemi anlama, hatayı güvenilir biçimde yeniden üretme, arama alanını daraltma ve düzeltmeyi özgün hataya karşı doğrulama disiplinidir. Bir şey bozuk, hatalı veya yavaş olduğunda kullanın.',
+	'domain-modeling': 'Kod ve konuşma için ortak dil, açık bounded context sınırları ve önemli kararlar için ADR’ler oluşturur. Terimler tutarsız olduğunda veya aynı kelime farklı alanlarda farklı anlamlara geldiğinde kullanın.',
+	'explain-plainly': 'Teknik çalışmayı teknik olmayan bir okur için sade dille açıklar ve zorunlu jargonun anlamını verir. Açıklamanın teknik ekip dışındaki birine yönelik olduğu her durumda kullanın.',
+	'grilling': 'Bir plan, karar veya fikirdeki bilinmeyenleri turlar hâlinde yoğun sorularla ortaya çıkarır. Varsayımlar gizliyse veya karar verilmeden uygulamaya geçiliyorsa kullanın.',
+	'handoff': 'Devam eden işi, nöbeti veya olayı başka bir kişi ya da ajana sabit dört bölümlü bir yapıyla devreder. Sorumluluk el değiştirirken kritik bağlamın kaybolmaması için kullanın.',
+	'improve-codebase-architecture': 'Kod tabanındaki mimari sürtünmeleri sınıflandırır ve en değerli iyileştirme fırsatlarını önceliklendirir. Mimari inceleme, teknik borç sıralaması veya sonraki refactor kararında kullanın.',
+	'incident-response': 'Olayın önem derecesini belirleme, rolleri ayırma, önce etkiyi azaltma ve suçlamayan postmortem yazma dâhil tüm olay yaşam döngüsünü yönetir. Üretim olayı sırasında veya hemen sonrasında kullanın.',
+	'observability': 'Yapılandırılmış loglar, dört altın sinyal ve SLI/SLO ile bir servisin sağlığını kodu okumadan yanıtlanabilir kılar. İzleme, alarm veya üretimde hata ayıklama tasarlarken kullanın.',
+	'project-groundwork': 'Mevcut taslak tanım veya README’deki engelleyici boşlukları tek soru turunda kapatır ve kararları kaynak belgeye işler. Uygulama başlamadan önce çelişkileri ve TBD’leri çözmek için kullanın.',
+	'prototype': 'Bir yaklaşıma bağlanmadan önce tek bir teknik veya tasarım sorusunu yanıtlayan, atılabilir bir deneme üretir. Durum modeli, mantık veya arayüz yönünün çalışıp çalışmayacağını sınarken kullanın.',
+	'release-versioning': 'Conventional Commits ile sürüm türünü sınıflandırır, SemVer ile yeni sürümü belirler ve değişiklik günlüğünü hazırlar. Sürüm çıkarırken veya major, minor, patch kararını verirken kullanın.',
+	'repo-secure': 'Bir GitHub deposu için geçerli güvenlik ayarlarını denetler ve bakım sorumlusunun onayıyla etkinleştirir. Secret scanning, branch protection veya SECURITY.md gerektiğinde kullanın.',
+	'repo-ship': 'Mevcut işi amacına göre commit’lere ayırır; yeni depolara doğru ad, görünürlük, açıklama ve konu etiketleri verir. Commit veya push öncesinde ve yeni depo oluştururken kullanın.',
+	'research': 'Teknik bir soruyu birincil kaynaklarla araştırır ve alıntılı bulguları depodaki bir dosyaya kaydeder. Bir iddianın doğrulanması veya dokümantasyon araştırması gerektiğinde kullanın.',
+	'resolving-merge-conflicts': 'Merge veya rebase çatışmasındaki iki tarafın niyetini ortak ataya kadar izleyerek birleştirir; taraflardan birini körlemesine seçmez. Git çatışma işaretleriyle karşılaştığınızda kullanın.',
+	'safe-deployment': 'Deploy ile release’i ayırır, değişikliği kademeli yayınlar ve otomatik geri alma koşulunu önceden tanımlar. Riskli bir değişikliği feature flag, canary veya benzeri yöntemlerle yayınlarken kullanın.',
+	'secure-coding': 'OWASP Top 10’a göre güvenli kodlama disiplinini kod yazıldığı anda uygular; girdi doğrulama, erişim, sırlar, bağımlılıklar ve güvenli hata yönetimini kapsar. Kod bir güven sınırını geçtiğinde kullanın.',
+	'spec-to-tickets': 'Üzerinde konuşulmuş bir planı yazılı tanıma ve uçtan uca tracer-bullet işlere dönüştürür; giriş ve çıkışı Definition of Ready ve Definition of Done ile sınırlar. Planı işlere bölüp sıralarken kullanın.',
+	'tdd': 'Red, green, refactor döngüsü; test piramidi; test double türleri ve FIRST özellikleriyle test odaklı geliştirme yapar. Bir özellik veya hata düzeltmesini testten başlayarak geliştirirken kullanın.',
+	'teach': 'Bir kavramı doğru bilişsel düzeyde anlatır ve tam örnekten bağımsız uygulamaya doğru desteği kademeli azaltır. Bir bilginin yalnızca söylenmesi değil, anlaşılması ve kalıcı olması gerektiğinde kullanın.',
+	'test-strategy': 'Test verisinin kaynağı, flaky test politikası ve integration ile e2e sınırı gibi test paketi düzeyindeki kararları verir. Bir seam için unit, contract, integration veya e2e testi seçerken kullanın.',
+	'to-questionnaire': 'Tek başına yanıtlanamayan bir kararı, eksik bilgiyi taşıyan kişiye yöneltilecek yazılı sorulara dönüştürür. Bilgi eşzamansız veya yapılandırılmış bir görüşmeyle alınacaksa kullanın.',
+	'triage': 'Gelen hata veya özellik talebini Etki × Aciliyet ile sınıflandırır, önceliklendirir ve doğru sonraki adıma yönlendirir. Backlog veya issue önceliği belirlerken kullanın.',
+	'wait-what': 'Son açıklamanın anlaşılmadığını fark eder ve aynı şeyi tekrarlamak yerine açıklamayı farklı düzeyde yeniden kurar. Kullanıcının yanıtı kafa karışıklığı gösterdiğinde kullanın.',
+	'wayfinder': 'Tek oturum için fazla büyük veya belirsiz işi, sırayla çözülen yazılı karar aşamalarına böler. Gevşek bir fikri uygulamadan önce net bir yola dönüştürürken kullanın.',
+	'wizard': 'Yalnızca insanın yapabileceği manuel bir işlemi adım adım yöneten etkileşimli script üretir. Kimlik bilgisi, CI sırrı, üçüncü taraf paneli veya tek seferlik geçiş gibi işlemlerde kullanın.',
+	'writing-for-agents': 'Bir ajanın okuyacağı skill, AGENTS.md, CLAUDE.md veya bağlantılı belgelerde prosedür, olgu ve gerekçeyi birbirine karıştırmadan yapılandırır. Ajan talimatı yazarken veya düzenlerken kullanın.',
+} as const;
 
 const categories = {
 	'Clarify & Collaborate': [
@@ -59,23 +125,38 @@ const assigned = Object.values(categories).flat();
 const duplicates = assigned.filter((name, index) => assigned.indexOf(name) !== index);
 const missing = skills.map(({ data }) => data.name).filter((name) => !assigned.includes(name));
 const unknown = assigned.filter((name) => !byName.has(name));
+const translated = Object.keys(turkishSkillDescriptions);
+const missingTranslations = skills
+	.map(({ data }) => data.name)
+	.filter((name) => !translated.includes(name));
+const unknownTranslations = translated.filter((name) => !byName.has(name));
 
-if (duplicates.length || missing.length || unknown.length) {
+if (duplicates.length || missing.length || unknown.length || missingTranslations.length || unknownTranslations.length) {
 	throw new Error(
-		`Invalid skill catalog categories. Duplicates: ${duplicates.join(', ') || 'none'}. Missing: ${missing.join(', ') || 'none'}. Unknown: ${unknown.join(', ') || 'none'}.`,
+		`Invalid skill catalog. Duplicate categories: ${duplicates.join(', ') || 'none'}. Missing categories: ${missing.join(', ') || 'none'}. Unknown categories: ${unknown.join(', ') || 'none'}. Missing Turkish translations: ${missingTranslations.join(', ') || 'none'}. Unknown Turkish translations: ${unknownTranslations.join(', ') || 'none'}.`,
 	);
 }
 ---
 
 <p class="catalog-summary">
-	<strong>{skills.length} skills</strong>, grouped by the job you need to do. Use search when you already know the situation or skill name.
+	<strong>{skills.length} {isTurkish ? 'skill' : 'skills'}</strong>{isTurkish
+		? ', yapmanız gereken işe göre gruplandırıldı. Durumu veya skill adını zaten biliyorsanız aramayı kullanın.'
+		: ', grouped by the job you need to do. Use search when you already know the situation or skill name.'}
 </p>
 
 {
 	Object.entries(categories).map(([category, names]) => (
 		<section aria-labelledby={`category-${category.toLowerCase().replaceAll(/[^a-z]+/g, '-')}`}>
-			<h2 id={`category-${category.toLowerCase().replaceAll(/[^a-z]+/g, '-')}`}>{category}</h2>
-			<p>{categoryDescriptions[category as keyof typeof categoryDescriptions]}</p>
+			<h2 id={`category-${category.toLowerCase().replaceAll(/[^a-z]+/g, '-')}`}>
+				{isTurkish
+					? turkishCategories[category as keyof typeof turkishCategories].label
+					: category}
+			</h2>
+			<p>
+				{isTurkish
+					? turkishCategories[category as keyof typeof turkishCategories].description
+					: categoryDescriptions[category as keyof typeof categoryDescriptions]}
+			</p>
 			<div class="skill-grid">
 				{names
 					.map((name) => byName.get(name)!)
@@ -83,9 +164,13 @@ if (duplicates.length || missing.length || unknown.length) {
 					.map(({ data }) => (
 						<article class="skill-card">
 							<h3><code>{data.name}</code></h3>
-							<p>{data.description}</p>
+							<p>
+								{isTurkish
+									? turkishSkillDescriptions[data.name as keyof typeof turkishSkillDescriptions]
+									: data.description}
+							</p>
 							<a href={`https://github.com/aethrox/doctrine/blob/main/skills/${data.name}/SKILL.md`}>
-								Read SKILL.md <span aria-hidden="true">↗</span>
+								{isTurkish ? "SKILL.md'yi okuyun" : 'Read SKILL.md'} <span aria-hidden="true">↗</span>
 							</a>
 						</article>
 					))}
