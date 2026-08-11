@@ -1,21 +1,21 @@
 ---
 title: Contributing
-description: Improve Doctrine skills, documentation, translations, and repository behavior.
+description: Help improve Doctrine skills, documentation, translations, or repository behavior.
 ---
 
-Doctrine welcomes focused corrections, standards-grounded skills, documentation improvements, and translations. Keep each contribution centered on one intent so it can be reviewed and verified independently.
+Contributions are welcome, from focused fixes and standards-based skills to clearer documentation and translations. Keep each contribution about one thing so reviewers can understand and verify it on its own.
 
 ## Before changing a skill
 
-Read the complete existing `SKILL.md`, related skills it references, the relevant part of `WORKFLOW.md`, and the named primary standard or established practice.
+Read the full `SKILL.md`, any related skills it mentions, the relevant section of `WORKFLOW.md`, and the primary standard or established practice it is based on.
 
-Preserve the distinction between skills. Expanding one skill until it absorbs adjacent responsibilities makes routing less reliable.
+Keep each skill's purpose distinct. If one skill starts taking on its neighbors' jobs, clients will have a harder time choosing the right one.
 
 ## Add or improve a skill
 
 1. Create or update `skills/<name>/SKILL.md`.
 2. Keep `name` identical to the directory name.
-3. Write `description` as a precise routing contract.
+3. Write `description` so a client can tell exactly when to use the skill.
 4. Ground the discipline in a named source.
 5. Include a defining constraint, phases, and closing checklist.
 6. Update `README.md` and `WORKFLOW.md` when the catalog or lifecycle changes.
@@ -24,13 +24,13 @@ Preserve the distinction between skills. Expanding one skill until it absorbs ad
 
 ## Contribute documentation
 
-Skill names and descriptions must come from `skills/*/SKILL.md`, the source of truth. Guides may explain those facts in beginner-friendly language, but should not maintain a second hand-written catalog that can drift.
+Treat `skills/*/SKILL.md` as the source of truth for skill names and descriptions. Guides can explain them in beginner-friendly language, but should not keep a separate hand-written catalog that will drift out of date.
 
-Documentation should lead with what the reader can do, define unfamiliar terms, use short task-focused pages, include observable verification, and avoid copy-paste tutorial loops.
+Start with what the reader can do. Define unfamiliar terms, keep pages short and focused on a task, and include a result the reader can check. Help people make decisions instead of leading them through copy-paste tutorial loops.
 
 ## Contribute a translation
 
-English is the canonical language. Turkish pages live under the matching `/tr/` path.
+English is the canonical language, meaning it is the version other translations follow. Turkish pages use the matching `/tr/` path.
 
 - Preserve commands, paths, code, and skill names exactly.
 - Translate meaning, not sentence structure.
@@ -46,7 +46,7 @@ npm install
 npm test
 ```
 
-Do not open a pull request with a known failing check unless the failure itself is the subject of the contribution and is explained clearly.
+Do not open a pull request with a known failing check unless your contribution is about that failure and the pull request explains it clearly.
 
 ## Commit style
 
@@ -58,4 +58,4 @@ fix: narrow research skill trigger
 docs: explain manual installation
 ```
 
-See the repository's full [contribution guide](https://github.com/aethrox/doctrine/blob/main/CONTRIBUTING.md) before opening a pull request.
+Before opening a pull request, read the repository's full [contribution guide](https://github.com/aethrox/doctrine/blob/main/CONTRIBUTING.md).

@@ -1,9 +1,9 @@
 ---
 title: Project Workflow
-description: Move from an idea to verified, reviewable work using the smallest relevant set of Doctrine skills.
+description: Move from an idea to work you can review and verify with only the Doctrine skills you need.
 ---
 
-Doctrine describes a lifecycle, not a rigid pipeline. Skip phases and skills that do not apply. Return to an earlier phase when new evidence changes a decision.
+Think of this workflow as a flexible lifecycle, not a pipeline you must follow in order. Skip anything that does not help. Go back when new evidence changes an earlier decision.
 
 ## The lifecycle
 
@@ -20,14 +20,14 @@ Doctrine describes a lifecycle, not a rigid pipeline. Skip phases and skills tha
 
 ## A small-task loop
 
-Most beginner tasks need a shorter loop:
+For most beginner tasks, this shorter loop is enough:
 
 1. **State the outcome.** Describe what a user can observe when the task works.
-2. **Select the skill.** Choose by the current situation, not by habit.
+2. **Select the skill.** Choose one for the situation in front of you, not out of habit.
 3. **Set boundaries.** Name non-goals, allowed files, and actions requiring approval.
-4. **Build one slice.** Keep one behavior and one verification target in focus.
+4. **Build one slice.** Focus on one behavior and one result you can check.
 5. **Inspect the result.** Review the diff and run the smallest relevant check.
-6. **Record the change.** Commit one logical intent and note any remaining risk.
+6. **Record the change.** Make a commit for one logical intent and note any risk that remains.
 
 ## Common routes
 
@@ -55,18 +55,18 @@ triage when priority is unknown
 
 ### A security-sensitive change
 
-Use `secure-coding` while the change is written. Do not postpone it until review.
+Use `secure-coding` while you write the change. Security is part of the work, not something to add during review.
 
 ## Evidence before “done”
 
-A response saying “done” is not evidence. Check the result at four levels:
+An agent saying “done” is not evidence. Check the result in four places:
 
-1. **Diff:** Did only the intended files and behaviors change?
-2. **Automated check:** Does the relevant test, build, or validation command pass?
-3. **User behavior:** Can you demonstrate the promised outcome?
-4. **Repository state:** Are unrelated changes untouched, and is the logical change recorded clearly?
+1. **Diff:** Does the list of file changes contain only the files and behaviors you intended to change?
+2. **Automated check:** Did the relevant test, build, or validation command pass?
+3. **User behavior:** Can you show the promised outcome working?
+4. **Repository state:** Did unrelated changes stay untouched, and is the logical change recorded clearly?
 
-For a bug fix, rerun the original reproduction. For a new feature, demonstrate its stated acceptance outcome.
+For a bug fix, repeat the steps that originally showed the bug. For a new feature, demonstrate the result you agreed would prove it works.
 
 ## A good task brief
 
@@ -80,4 +80,4 @@ Evidence of completion:
 Doctrine skill to use:
 ```
 
-Do not fill fields that do not matter. The purpose is to prevent hidden assumptions, not to create paperwork.
+Leave out any field that does not matter. This brief is here to expose hidden assumptions, not create paperwork.

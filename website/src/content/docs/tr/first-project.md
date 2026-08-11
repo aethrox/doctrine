@@ -1,21 +1,21 @@
 ---
 title: İlk Projeniz
-description: Kopyala-yapıştır tutorial izlemeden Doctrine ile bir Karar Günlüğü projesini şekillendirin.
+description: Hazır adımları kopyalamadan Doctrine ile küçük bir Karar Günlüğü projesi geliştirin.
 ---
 
-Bu proje satır satır tekrarlanacak bir talimat dizisi değildir. Kararları giderek daha az yönlendirmeyle vermeyi, kaydetmeyi, uygulamayı ve doğrulamayı öğretir.
+Bu sayfa, satır satır izleyeceğiniz bir tarif değildir. Amaç, kararları giderek daha az yönlendirmeyle vermeniz, kaydetmeniz, uygulamanız ve doğrulamanızdır.
 
 ## Ürün
 
-Karar Günlüğü önemli kararları kaydeden küçük bir tarayıcı uygulamasıdır. Bir kayıt; durumu, seçilen kararı, gerekçeyi, kategoriyi ve tarihi içerir.
+Karar Günlüğü, önemli kararları kaydetmek için kullanılan küçük bir tarayıcı uygulamasıdır. Her kayıtta durum, verilen karar, gerekçe, kategori ve tarih bulunur.
 
-İlk sürüm kullanıcının kayıt oluşturmasını ve görüntülemesini, sayfa yenilendiğinde kayıtları korumasını, arama ve kategori filtresi kullanmasını ve kayıtları JSON olarak dışa aktarmasını sağlar.
+İlk sürümde kullanıcı kayıt oluşturup görüntüleyebilir. Kayıtlar sayfa yenilendiğinde kaybolmaz; arama ve kategori filtresiyle bulunabilir, JSON olarak dışa aktarılabilir.
 
 ## Sabit kısıtlar
 
-Başlangıç sürümü HTML, CSS, tarayıcıya özgü JavaScript, `localStorage` ve statik barındırma kullanır. Framework, paket yöneticisi, backend, kullanıcı hesabı, veritabanı sunucusu veya ücretli API kullanmaz.
+Başlangıç sürümünde yalnızca HTML, CSS, tarayıcı JavaScript'i, `localStorage` ve statik barındırma kullanılır. Framework, paket yöneticisi, backend, kullanıcı hesabı, veritabanı sunucusu ve ücretli API kapsam dışındadır.
 
-Yerel depolama şifreli bir yedek değildir. Tarayıcı verilerinin silinmesi veya başka bir tarayıcıya geçilmesi kayıtlara erişimi kaybettirebilir. JSON dışa aktarma taşınabilir bir kopya sağlar.
+Yerel depolamanın şifreli bir yedek olmadığını unutmayın. Tarayıcı verileri silinirse veya başka bir tarayıcıya geçerseniz kayıtlara erişemeyebilirsiniz. JSON dışa aktarma, yanınızda taşıyabileceğiniz bir kopya sağlar.
 
 ## Geliştirmeden önce başarıyı tanımlayın
 
@@ -29,15 +29,15 @@ Yerel depolama şifreli bir yedek değildir. Tarayıcı verilerinin silinmesi ve
 - Kullanıcı metni HTML olarak çalıştırılmaz, metin olarak gösterilir.
 - Uygulama klavyeyle kullanılabilir ve dar ekranda okunabilir kalır.
 
-Bu sonuçları karşılamak için gerekli olmayan her şey ilk sürümün kapsamı dışındadır.
+Bu sonuçlar için gerekmeyen her şey ilk sürümün dışında kalır.
 
 ## İlk parça, tam gerekçeyle
 
-En küçük kullanışlı uçtan uca parça:
+İşe yarayan en küçük uçtan uca parça şudur:
 
 > Kullanıcı bir karar ve gerekçe girer, kaydeder, sayfayı yeniler ve kaydı hâlâ görür.
 
-Bu parça form, doğrulama, kayıt oluşturma, tarayıcı depolaması, gösterim ve yeniden yükleme yolunu birlikte kanıtlar. Arama, filtre, dışa aktarma, düzenleme ve görsel iyileştirme bu parçaya ait değildir.
+Bu parça; formun, doğrulamanın, kayıt oluşturmanın, tarayıcı depolamasının, gösterimin ve yeniden yüklemenin birlikte çalıştığını kanıtlar. Arama, filtre, dışa aktarma, düzenleme ve görsel iyileştirmeler şimdilik bu parçaya dahil değildir.
 
 Gözlemlenebilir kabul kontrolü kullanın:
 
@@ -45,15 +45,15 @@ Gözlemlenebilir kabul kontrolü kullanın:
 
 ## İkinci parça, daha az yönlendirmeyle
 
-Arama veya kategori filtresinden birini seçin. Geliştirmeden önce kullanıcı tarafından görülen sonucu, normal bir örneği, bir sınır durumunu ve çalıştığını kanıtlayan en küçük kontrolü yazın.
+Sırada arama ya da kategori filtresinden biri var. Koda geçmeden önce kullanıcının göreceği sonucu, sıradan bir örneği, bir sınır durumunu ve çalıştığını kanıtlayacak en küçük kontrolü yazın.
 
-Ajanın birden fazla davranışı birleştiren parçaları sorgulamasını isteyin. Her ayrıntıyı sizin yerinize seçmesini istemeyin.
+Ajanınızdan, birden fazla davranışı aynı parçaya sıkıştırdığınızda bunu sorgulamasını isteyin. Bütün ayrıntıları sizin yerinize seçmesini istemeyin.
 
 ## Bağımsız tamamlayın
 
-Kalan arama veya filtre davranışını, JSON dışa aktarmayı, erişilebilirliği, duyarlı yerleşimi ve statik dağıtımı kendiniz sıralayın. Her parçada kod istemeden önce sonuç ile kanıtı belirtin.
+Geriye kalan arama veya filtre davranışını, JSON dışa aktarmayı, erişilebilirliği, farklı ekranlara uyumlu yerleşimi ve statik dağıtımı kendiniz sıralayın. Her parça için kod istemeden önce beklediğiniz sonucu ve kanıtı yazın.
 
-Proje, dosyalarınız bir örnekle aynı olduğunda değil, kararları ve doğrulama kanıtlarını açıklayabildiğinizde başarılıdır.
+Başarı ölçütü, dosyalarınızın bir örnekle aynı olması değildir. Verdiğiniz kararları ve doğrulama kanıtlarını açıklayabiliyorsanız proje amacına ulaşmıştır.
 
 ## Yardımcı olabilecek skill içerikleri
 
@@ -69,4 +69,4 @@ Proje, dosyalarınız bir örnekle aynı olduğunda değil, kararları ve doğru
 | Tamamlanan diff incelenmeli | `code-review` |
 | Mantıksal değişiklik kaydedilmeye hazır | `repo-ship` |
 
-Bütün skill listesini aynı anda çağırmayın. O anki soruna uyan skill içeriğini seçin.
+Bütün skill'leri aynı anda çağırmayın. O an çözmeye çalıştığınız soruna uyanı seçin.

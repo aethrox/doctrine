@@ -1,17 +1,17 @@
 ---
 title: Kurulum
-description: Yapay zekâ kodlama istemcinizin desteklediği Doctrine kurulum yöntemini seçin.
+description: Kodlama istemcinize uygun Doctrine kurulum yöntemini seçin.
 ---
 
-Doctrine; yerel plugin, MCP sunucusu veya skill dosyalarını elle kopyalama yoluyla kullanılabilir. Skill içeriği aynıdır, ancak bulunma ve çağırma davranışı istemciye göre değişir.
+Doctrine'ı yerel plugin, MCP sunucusu veya skill dosyalarını elle kopyalayarak kullanabilirsiniz. İçerik değişmez, ancak skill'lerin nasıl bulunduğu ve çağrıldığı istemciye göre değişir.
 
 ## Yöntem seçin
 
 | Yöntem | Ne zaman kullanılır? | Önemli davranış |
 |---|---|---|
-| Yerel plugin | İstemciniz Doctrine plugin desteğine sahipse | İstemci, açıklamalarına göre skill seçimi yapabilir |
+| Yerel plugin | İstemciniz Doctrine plugin'ini destekliyorsa | İstemci, açıklamalara bakarak skill seçebilir |
 | MCP sunucusu | İstemciniz MCP prompt desteğine sahipse | Doctrine skill listesi prompt olarak görünür; seçim istemciye bağlıdır |
-| Elle kopyalama | İstemciniz yerel talimat veya skill dosyaları okuyorsa | Dosyaların konumunu ve güncelleme zamanını siz yönetirsiniz |
+| Elle kopyalama | İstemciniz yerel talimat veya skill dosyalarını okuyabiliyorsa | Dosyaların konumunu ve ne zaman güncelleneceğini siz yönetirsiniz |
 
 ## Claude Code plugin
 
@@ -22,11 +22,11 @@ Claude Code için en kısa kurulum yolu:
 /plugin install doctrine
 ```
 
-Kurulumdan sonra kullanılabilirliği doğrulamak için bir skill adını açıkça belirtin:
+Kurulumun çalıştığını görmek için bir skill'i adıyla çağırın:
 
-> Doctrine `explain-plainly` skill kullanarak test ile kod incelemesi arasındaki farkı açıkla.
+> Doctrine'ın `explain-plainly` skill'ini kullanarak test ile kod incelemesi arasındaki farkı açıkla.
 
-Otomatik seçim kullanışlıdır, ancak tek başına güvenilir bir kurulum testi değildir.
+Otomatik seçim yararlı olsa da tek başına güvenilir bir kurulum testi sayılmaz.
 
 ## MCP sunucusu
 
@@ -43,13 +43,13 @@ MCP yöntemi Node.js 18 veya daha yeni bir sürüm gerektirir. İstemcinizin des
 }
 ```
 
-Yapılandırma dosyasının konumu istemciye göre değişir. `command` ve `args` değerleri aynı kalır. Sunucuyu doğrudan da başlatabilirsiniz:
+Yapılandırma dosyasının yeri istemciye göre değişir; `command` ve `args` değerleri aynı kalır. Sunucuyu doğrudan da başlatabilirsiniz:
 
 ```bash
 npx github:aethrox/doctrine
 ```
 
-Doctrine her `SKILL.md` dosyasını MCP prompt olarak kaydeder. MCP prompt, istemcinin kullanıcıya sunduğu mesaj veya iş akışı şablonudur. MCP sunucusunu kurmanın bütün skill içeriklerini otomatik olarak etkinleştirdiğini varsaymayın.
+Doctrine, her `SKILL.md` dosyasını bir MCP prompt'u olarak kaydeder. MCP prompt'u, istemcinin kullanıcıya sunabildiği bir mesaj veya iş akışı şablonudur. MCP sunucusunu kurunca bütün skill'lerin otomatik olarak devreye gireceğini varsaymayın.
 
 ## Elle kurulum
 
@@ -68,10 +68,10 @@ for s in doctrine/skills/*/; do
 done
 ```
 
-Elle yapılan kurulumlar otomatik güncellenmez. Güncellemek istediğinizde Doctrine değişikliklerini çekip dosyaları tekrar kopyalayın.
+Elle kurulan dosyalar kendiliğinden güncellenmez. Yeni sürümü almak istediğinizde Doctrine değişikliklerini çekip dosyaları yeniden kopyalayın.
 
 ## Kurulumu doğrulayın
 
 1. `explain-plainly` adını açıkça yazarak çağırın.
-2. Skill ile araç arasındaki farkı açıklamasını isteyin.
-3. Yanıtın sade dil disiplinini izlediğini doğrulayın.
+2. Skill ile araç arasındaki farkı anlatmasını isteyin.
+3. Yanıtın sade ve anlaşılır olup olmadığını kontrol edin.

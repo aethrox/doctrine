@@ -1,15 +1,15 @@
 ---
 title: Katkıda Bulunma
-description: Doctrine skill'lerini, belgelerini, çevirilerini ve depo davranışını iyileştirin.
+description: Doctrine skill'lerine, belgelerine, çevirilerine ve depo davranışına katkıda bulunun.
 ---
 
-Doctrine; belirli bir amaca odaklanan düzeltmeleri, standartlara dayanan skill'leri, belge iyileştirmelerini ve çevirileri memnuniyetle karşılar. Her katkıyı tek bir amaçla sınırlayın. Böylece katkı bağımsız olarak incelenebilir ve doğrulanabilir.
+Doctrine; amacı belli düzeltmelere, standartlara dayanan skill'lere, daha iyi belgelere ve çevirilere açıktır. Her katkıda tek bir amaca odaklanın. Böylece değişiklik kendi başına incelenip doğrulanabilir.
 
 ## Bir skill'i değiştirmeden önce
 
-Mevcut `SKILL.md` dosyasının tamamını, dosyada başvurulan ilgili skill'leri, `WORKFLOW.md` dosyasının ilgili bölümünü ve adı verilen birincil standardı veya yerleşik uygulamayı okuyun.
+Önce mevcut `SKILL.md` dosyasının tamamını okuyun. Ardından dosyanın yönlendirdiği ilgili skill'lere, `WORKFLOW.md` içindeki ilgili bölüme ve adı geçen birincil standarda ya da yerleşik uygulamaya bakın.
 
-Skill'ler arasındaki ayrımı koruyun. Bir skill'i komşu sorumlulukları da kapsayacak kadar genişletmek, doğru skill'e yönlendirme yapılmasını zorlaştırır.
+Skill'ler arasındaki sınırları koruyun. Bir skill'i yakın sorumlulukları da içine alacak kadar genişletmek, ajanın doğru skill'i seçmesini zorlaştırır.
 
 ## Skill ekleyin veya iyileştirin
 
@@ -24,9 +24,9 @@ Skill'ler arasındaki ayrımı koruyun. Bir skill'i komşu sorumlulukları da ka
 
 ## Belgelere katkıda bulunun
 
-Skill adları ve açıklamaları, doğruluğun tek kaynağı olan `skills/*/SKILL.md` dosyalarından gelmelidir. Rehberler bu bilgileri yeni başlayanların anlayabileceği bir dille açıklayabilir. Ancak zamanla asıl katalogdan kopabilecek, elle yazılmış ikinci bir katalog tutmamalıdır.
+Skill adları ve açıklamaları, doğruluğun tek kaynağı olan `skills/*/SKILL.md` dosyalarından gelmelidir. Rehberlerde bunları yeni başlayanların anlayacağı dille açıklayabilirsiniz. Ancak zamanla ana katalogdan kopacak, elle tutulan ikinci bir liste oluşturmayın.
 
-Belgeler önce okuyucunun ne yapabileceğini anlatmalı, bilinmeyen terimleri tanımlamalı, kısa ve göreve odaklı sayfalar kullanmalı, gözlemlenebilir doğrulama adımları içermeli ve kopyala-yapıştır tutorial döngülerinden kaçınmalıdır.
+Belgeler önce okuyucunun ne yapabileceğini söylemelidir. Bilinmeyen terimleri geçtiği yerde açıklayın, sayfaları kısa ve görev odaklı tutun, sonucu gözlemlemeyi sağlayan kontroller ekleyin. Okuru düşünmeden kopyala-yapıştır yapmaya yönelten tutorial döngülerinden kaçının.
 
 ## Çeviriye katkıda bulunun
 
@@ -34,7 +34,7 @@ Belgeler önce okuyucunun ne yapabileceğini anlatmalı, bilinmeyen terimleri ta
 
 - Komutları, yolları, kodu ve skill adlarını olduğu gibi koruyun.
 - Cümle yapısını değil, anlamı çevirin.
-- Türkçe çevirisi tamamlanmadı diye İngilizce bir düzeltmeyi geciktirmeyin.
+- Türkçe çeviri henüz hazır değil diye İngilizce bir düzeltmeyi bekletmeyin.
 - Türkçe sayfa hazır değilse sitenin İngilizce içeriğe geri dönmesine izin verin.
 
 ## Kontrolleri çalıştırın
@@ -46,7 +46,7 @@ npm install
 npm test
 ```
 
-Başarısız olduğu bilinen bir kontrol varken pull request açmayın. Tek istisna, katkının doğrudan bu hatayı ele alması ve hatanın açıkça açıklanmasıdır.
+Başarısız olduğunu bildiğiniz bir kontrol varken pull request açmayın. Bunun tek istisnası, katkının doğrudan o hatayı düzeltmesi ve mevcut durumun açıkça belirtilmesidir.
 
 ## Commit biçimi
 

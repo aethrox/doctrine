@@ -1,15 +1,15 @@
 ---
 title: Advanced
-description: Create or adapt Doctrine-style skills for recurring engineering work.
+description: Create or adapt a Doctrine skill when the same engineering situation keeps coming up.
 ---
 
-Write a new skill only when a recognizable situation repeatedly benefits from the same discipline. A one-time request belongs in a prompt. Repository-specific rules belong in that repository's instruction mechanism.
+Create a skill when the same recognizable situation keeps benefiting from the same way of working. Use a prompt for a one-time request. Keep repository-specific rules in that repository's instruction files.
 
 ## When a Doctrine skill is appropriate
 
 - The task recurs.
 - The trigger situation can be described clearly.
-- The procedure changes how the work is performed.
+- The skill gives the agent concrete steps to follow.
 - Completion can be checked.
 - The discipline is grounded in a named standard or established practice.
 
@@ -32,26 +32,26 @@ description: "What discipline this encodes and the situations in which it should
 ---
 ```
 
-The `name` must match the directory name exactly. The body should contain a defining constraint, numbered phases with concrete rules, reference material where useful, and a closing checklist with observable completion conditions.
+The `name` must match the directory name exactly. In the body, include the rule that defines the skill, numbered phases with concrete steps, useful reference material, and a final checklist whose results you can observe.
 
 ## Write the description as a routing contract
 
-A useful description answers:
+The description acts as a routing contract: it helps the client decide when this skill is the right one. A useful description answers:
 
 - What job does the skill perform?
 - When should an agent select it?
 - Which phrases or situations indicate a match?
-- Which adjacent skill does it not replace?
+- Which similar skill does it not replace?
 
-Test explicit invocation, implicit selection, and a nearby situation where the skill should not activate.
+Test three cases: someone names the skill directly, the client selects it from the task, and a similar task should not trigger it.
 
 ## Keep agent-facing writing operational
 
-Use numbered how-to steps as the spine. Keep definitions, tables, and checklists easy to scan. Move historical explanation elsewhere unless it changes what the agent must do. Avoid tutorial voice inside `SKILL.md`; the agent needs an executable procedure.
+Build the skill around numbered steps. Make definitions, tables, and checklists easy to scan. Move background history elsewhere unless it changes the work. A `SKILL.md` should read like a procedure the agent can follow, not a tutorial.
 
 ## Local customization or Doctrine contribution
 
-Keep organization-specific policy, private vocabulary, and personal workflow preferences local. Consider contributing a skill to Doctrine when it applies across projects and products, has precise triggers, is grounded in a named source, and adds a distinct discipline.
+Keep company policy, private vocabulary, and personal workflow preferences local. A skill may belong in Doctrine if it works across projects and products, has precise triggers, draws on a named source, and adds a distinct discipline.
 
 ## Validate a contribution
 
@@ -62,4 +62,4 @@ npm install
 npm test
 ```
 
-The current tests validate YAML frontmatter, directory-name matching, MCP prompt discovery, exact prompt content, and the packaged server.
+These tests check the YAML frontmatter, directory-name matching, MCP prompt discovery, exact prompt content, and the packaged server.

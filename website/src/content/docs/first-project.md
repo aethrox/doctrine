@@ -1,13 +1,13 @@
 ---
 title: Your First Project
-description: Use Doctrine to shape a Decision Journal without following a copy-paste tutorial.
+description: Shape your first Decision Journal with Doctrine, without following a copy-paste tutorial.
 ---
 
-This project is a reference case, not a script to reproduce line by line. The goal is to learn how to make, record, implement, and verify decisions with progressively less guidance.
+Use this project as a reference, not a script to copy line by line. You will practice making, recording, implementing, and checking your own decisions with less guidance at each stage.
 
 ## The product
 
-The Decision Journal is a small browser application for recording important decisions. An entry contains the situation, chosen decision, reasoning, category, and date.
+The Decision Journal is a small browser app for recording important decisions. Each entry has a situation, the decision you made, your reasoning, a category, and a date.
 
 The first release lets a user:
 
@@ -19,52 +19,52 @@ The first release lets a user:
 
 ## Fixed constraints
 
-The beginner version uses HTML, CSS, browser-native JavaScript, `localStorage`, and static hosting. It does not use a framework, package manager, backend, user accounts, database server, or paid API.
+This first version uses HTML, CSS, JavaScript built into the browser, `localStorage`, and static hosting. It has no framework, package manager, backend, user accounts, database server, or paid API.
 
-Local storage is not encrypted backup. Clearing browser data or changing browsers can remove access to the journal. JSON export provides a portable copy.
+Local storage is not an encrypted backup. If you clear your browser data or switch browsers, you may lose access to the journal. JSON export gives you a copy you can keep elsewhere.
 
 ## Define success before implementation
 
-A first release is complete when:
+The first release is complete when:
 
 - A valid entry can be saved and displayed.
 - Saved entries remain after a reload.
 - Search matches the situation, decision, or reasoning.
 - Category filtering produces the expected subset.
 - Export downloads valid JSON containing the saved entries.
-- User-provided text is rendered as text, not injected as HTML.
+- Text entered by a user is displayed as text and never treated as HTML.
 - The app remains usable with a keyboard and readable on a narrow screen.
 
-Anything else is outside the first release unless it becomes necessary to meet these outcomes.
+Leave everything else out of the first release unless you need it to reach one of these outcomes.
 
 ## The first slice, fully reasoned
 
-The smallest useful end-to-end slice is:
+Start with the smallest useful end-to-end slice, a thin piece of the app that works from input to saved result:
 
 > A user enters one decision and its reasoning, saves it, reloads the page, and still sees the entry.
 
-This proves the form, validation, record creation, browser storage, rendering, and reload path together. Search, filters, export, editing, and visual polish do not belong in this slice.
+This one slice checks the form, validation, record creation, browser storage, display, and reload path together. Save search, filters, export, editing, and visual polish for later.
 
-Use an observable acceptance check:
+Use a result you can see and check:
 
 > Save an entry named “Choose hosting,” reload the page, and confirm that its decision and reasoning are still visible.
 
 ## The second slice, with less guidance
 
-Choose either search or category filtering. Before implementation, write:
+Next, choose either search or category filtering. Before you implement it, write down:
 
 - The user-visible outcome.
 - One normal example.
 - One edge case.
 - The smallest check that proves it works.
 
-Ask the agent to challenge your slice if it combines more than one behavior. Do not ask it to choose every detail for you.
+Ask the agent to point it out if your slice combines more than one behavior. Keep some decisions for yourself instead of asking it to choose every detail.
 
 ## Finish independently
 
-Plan and sequence the remaining search or filter behavior, JSON export, accessibility, responsive layout, and static deployment yourself. For each slice, state the outcome and evidence before requesting code.
+Plan the order of the remaining search or filter work, JSON export, accessibility, responsive layout, and static deployment yourself. Before asking for code, state the outcome for each slice and how you will check it.
 
-The project succeeds when you can explain its decisions and verification evidence, not when your files happen to match a reference implementation.
+You have succeeded when you can explain the decisions and the evidence that the app works. Your files do not need to match a reference implementation.
 
 ## Skills that may help
 
@@ -80,4 +80,4 @@ The project succeeds when you can explain its decisions and verification evidenc
 | A completed diff needs evaluation | `code-review` |
 | A logical change is ready to save | `repo-ship` |
 
-Do not invoke every skill at once. Select the one that matches the current problem.
+Do not invoke every skill at once. Pick the one that fits the problem in front of you.
