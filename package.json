@@ -4,6 +4,7 @@
   "description": "MCP server exposing the doctrine engineering-skills set as prompts for any MCP-capable client (Claude Desktop, Cursor, Windsurf, Cline, and more).",
   "type": "module",
   "license": "MIT",
+  "homepage": "https://aethrox.github.io/doctrine/",
   "repository": "https://github.com/aethrox/doctrine",
   "bin": {
     "doctrine-mcp": "./mcp-server.js"
