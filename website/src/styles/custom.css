@@ -1,0 +1,61 @@
+:root {
+	--sl-color-accent-low: #2b2418;
+	--sl-color-accent: #b88a3b;
+	--sl-color-accent-high: #f4dfb4;
+	--sl-color-white: #f8f3e8;
+	--sl-color-gray-1: #e8dfcf;
+	--sl-color-gray-2: #c9bdab;
+	--sl-color-gray-3: #948878;
+	--sl-color-gray-4: #61594f;
+	--sl-color-gray-5: #403a34;
+	--sl-color-gray-6: #282521;
+	--sl-color-black: #171512;
+}
+
+:root[data-theme='light'] {
+	--sl-color-accent-low: #f4e7ce;
+	--sl-color-accent: #80591f;
+	--sl-color-accent-high: #342712;
+	--sl-color-white: #1d1a16;
+	--sl-color-gray-1: #352f29;
+	--sl-color-gray-2: #544c43;
+	--sl-color-gray-3: #756b5f;
+	--sl-color-gray-4: #a89d8d;
+	--sl-color-gray-5: #d4cabb;
+	--sl-color-gray-6: #eee7dc;
+	--sl-color-gray-7: #f8f3e8;
+	--sl-color-black: #fffdf8;
+}
+
+.hero img {
+	border: 1px solid color-mix(in srgb, var(--sl-color-gray-5), transparent 35%);
+	border-radius: 0.9rem;
+	box-shadow: 0 1rem 3rem color-mix(in srgb, var(--sl-color-black), transparent 72%);
+}
+
+.skill-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+	gap: 1rem;
+	margin-block: 1rem 2rem;
+}
+
+.skill-card {
+	display: flex;
+	flex-direction: column;
+	gap: 0.65rem;
+	padding: 1rem;
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 0.75rem;
+	background: color-mix(in srgb, var(--sl-color-gray-6), transparent 55%);
+}
+
+.skill-card h3,
+.skill-card p {
+	margin: 0;
+}
+
+.skill-card a {
+	margin-top: auto;
+	font-weight: 600;
+}

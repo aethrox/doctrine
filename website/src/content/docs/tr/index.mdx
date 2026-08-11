@@ -1,0 +1,43 @@
+---
+title: Doctrine Wiki
+description: Doctrine mühendislik skill sistemini açıklık, kanıt ve kontrolle kullanmayı öğrenin.
+template: splash
+hero:
+  tagline: Gerçek standartlara dayanan mühendislik skill sistemi, yapay zekâ ile ilk projesini geliştirenler için açıklandı.
+  image:
+    file: ../../../assets/doctrine-banner.png
+    alt: Doctrine, gerçek standartlara dayanan mühendislik skill sistemi
+  actions:
+    - text: Buradan başlayın
+      link: ./start-here/
+      icon: right-arrow
+    - text: Skill kataloğu
+      link: ./skill-catalog/
+      icon: open-book
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+import CurrentVersion from '../../../components/CurrentVersion.astro';
+
+<CurrentVersion />
+
+## Fikirden kanıta
+
+Doctrine, yapay zekâ ajanlarına yeniden kullanılabilir mühendislik disiplinleri sağlar. Bu wiki, bu disiplinlerin ne yaptığını anlamanıza, doğru skill seçimine, işi yönlendirmenize ve sonucu kendiniz doğrulamanıza yardımcı olur.
+
+<CardGrid stagger>
+	<Card title="Sistemi anlayın" icon="information">
+		Model, istemci, ajan, skill, prompt, araç ve izin arasındaki farkı öğrenin.
+	</Card>
+	<Card title="İlk projenizi geliştirin" icon="rocket">
+		Kopyala-yapıştır tutorial izlemeden karar vermeyi ve doğrulamayı küçük bir Karar Günlüğü üzerinde deneyin.
+	</Card>
+	<Card title="Doğru skill seçimini yapın" icon="magnifier">
+		Doctrine skill listesini ihtiyacınız olan göreve göre inceleyin. Katalog veriyi doğrudan `SKILL.md` dosyalarından okur.
+	</Card>
+</CardGrid>
+
+## Doctrine ne değildir?
+
+Doctrine; yapay zekâ modelinizin, kodlama istemcinizin, testlerin, izinlerin veya kararlarınızın yerine geçmez. Bir skill, ajana işi nasıl ele alacağını anlatır. Erişim sağlamaz ve sonucun doğru olduğunu tek başına kanıtlamaz.

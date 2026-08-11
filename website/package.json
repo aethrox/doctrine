@@ -1,0 +1,23 @@
+{
+  "name": "doctrine-wiki",
+  "private": true,
+  "type": "module",
+  "version": "1.1.0",
+  "description": "The bilingual Doctrine Wiki.",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.41.7",
+    "astro": "7.1.6",
+    "js-yaml": "4.3.1",
+    "sharp": "^0.35.3"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

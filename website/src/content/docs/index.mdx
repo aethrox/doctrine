@@ -1,0 +1,43 @@
+---
+title: Doctrine Wiki
+description: Learn to use Doctrine engineering skills with clarity, evidence, and control.
+template: splash
+hero:
+  tagline: Engineering skills grounded in real standards, explained for humans building with AI.
+  image:
+    file: ../../assets/doctrine-banner.png
+    alt: Doctrine, engineering skills grounded in real standards
+  actions:
+    - text: Start here
+      link: ./start-here/
+      icon: right-arrow
+    - text: Browse skills
+      link: ./skill-catalog/
+      icon: open-book
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+import CurrentVersion from '../../components/CurrentVersion.astro';
+
+<CurrentVersion />
+
+## From an idea to evidence
+
+Doctrine gives AI coding agents reusable engineering disciplines. This wiki helps you understand what those disciplines do, choose the right skill, guide the work, and verify the result yourself.
+
+<CardGrid stagger>
+	<Card title="Understand the system" icon="information">
+		Learn the difference between a model, client, agent, skill, prompt, tool, and permission.
+	</Card>
+	<Card title="Build your first project" icon="rocket">
+		Use a small Decision Journal to practise decisions and verification without following a copy-paste tutorial.
+	</Card>
+	<Card title="Find the right skill" icon="magnifier">
+		Browse every Doctrine skill by the job you need to do. The catalog reads directly from each `SKILL.md` file.
+	</Card>
+</CardGrid>
+
+## What Doctrine is not
+
+Doctrine does not replace your AI model, coding client, tests, permissions, or judgment. A skill tells an agent how to approach work. It does not grant access or prove that the result is correct.

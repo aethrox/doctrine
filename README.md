@@ -7,6 +7,8 @@
 
 Software engineering discipline grounded in named primary standards (OWASP, ITIL, IETF RFCs, ISO, BABOK, SBAR, and more) instead of invented convention. 33 skills covering the software development lifecycle: TDD, code review, incident response, domain modeling, deployment, dependency management, and more.
 
+New to Doctrine? Start with the bilingual [Doctrine Wiki](https://aethrox.github.io/doctrine/).
+
 Three ways to use it, depending on your tool:
 
 ## Option 1: Claude Code plugin
