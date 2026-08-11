@@ -1,15 +1,15 @@
 ---
 title: İleri Düzey
-description: Tekrarlayan mühendislik işleri için Doctrine tarzı skill oluşturun veya mevcut bir skill'i uyarlayın.
+description: Tekrarlanan mühendislik işleri için yeni bir Doctrine skill'i yazın veya var olanı uyarlayın.
 ---
 
-Aynı çalışma disiplininin tekrar tekrar fayda sağladığı, tanınabilir bir durum varsa yeni bir skill yazın. Bir defalık istekler için prompt kullanın. Depoya özgü kurallar, o deponun talimat mekanizmasında yer almalıdır.
+Aynı çalışma biçimi belirli bir durumda tekrar tekrar işe yarıyorsa yeni bir skill yazın. Tek seferlik istekler için prompt yeterlidir. Yalnızca bir depoyu ilgilendiren kuralları da o deponun talimat mekanizmasında tutun.
 
-## Doctrine skill ne zaman uygundur?
+## Doctrine skill'i ne zaman uygundur?
 
-- Görev tekrarlanır.
+- Aynı tür görev tekrar eder.
 - Skill'i tetikleyen durum açıkça tanımlanabilir.
-- Prosedür, işin nasıl yapıldığını değiştirir.
+- Prosedür, işin ele alınış biçimini gerçekten değiştirir.
 - Tamamlanma durumu kontrol edilebilir.
 - Disiplin, adı belirtilen bir standarda veya yerleşik bir uygulamaya dayanır.
 
@@ -32,26 +32,26 @@ description: "What discipline this encodes and the situations in which it should
 ---
 ```
 
-`name`, klasör adıyla tamamen aynı olmalıdır. Gövde; temel bir kısıt, somut kurallar içeren numaralı aşamalar, yararlı olduğunda başvuru kaynakları ve gözlemlenebilir tamamlanma koşulları içeren son bir kontrol listesi barındırmalıdır.
+`name`, klasör adıyla tamamen aynı olmalıdır. Gövde şunları içermelidir: temel bir kısıt, somut kurallardan oluşan numaralı aşamalar, gerektiğinde başvuru kaynakları ve tamamlanma koşullarını gözlemlenebilir biçimde sıralayan son bir kontrol listesi.
 
-## Açıklamayı yönlendirme sözleşmesi olarak yazın
+## Açıklamayı seçim ölçütü olarak yazın
 
 Kullanışlı bir açıklama şu soruları yanıtlar:
 
 - Skill hangi işi yapar?
-- Bir ajan skill'i ne zaman seçmelidir?
+- Ajan bu skill'i ne zaman seçmelidir?
 - Hangi ifadeler veya durumlar eşleşmeye işaret eder?
-- Hangi yakın skill'in yerine geçmez?
+- Benzer görünen hangi skill'in yerine kullanılmamalıdır?
 
-Açık çağırmayı, örtük seçimi ve skill'in etkinleşmemesi gereken benzer bir durumu test edin.
+Skill'in adla çağrılmasını, açıklamasına göre seçilmesini ve seçilmemesi gereken benzer bir durumu ayrı ayrı test edin.
 
 ## Ajana yönelik metni uygulanabilir tutun
 
-Numaralı uygulama adımlarını metnin omurgası olarak kullanın. Tanımları, tabloları ve kontrol listelerini kolay taranabilir tutun. Ajanın ne yapması gerektiğini değiştirmeyen tarihsel açıklamaları başka bir yere taşıyın. `SKILL.md` içinde öğretici anlatımdan kaçının; ajanın yürütülebilir bir prosedüre ihtiyacı vardır.
+Metnin omurgasını numaralı uygulama adımları oluştursun. Tanımlar, tablolar ve kontrol listeleri bir bakışta taranabilsin. Ajanın ne yapacağını değiştirmeyen tarihsel bilgileri başka bir yerde tutun. `SKILL.md` bir eğitim metni değildir; ajanın uygulayabileceği bir prosedür sunmalıdır.
 
 ## Yerel özelleştirme veya Doctrine katkısı
 
-Kuruma özgü politikaları, özel sözlüğü ve kişisel iş akışı tercihlerini yerel tutun. Bir skill; projeler ve ürünler arasında uygulanabiliyorsa, kesin tetikleyicilere sahipse, adı belirtilen bir kaynağa dayanıyorsa ve ayrı bir disiplin katıyorsa Doctrine'a katkıda bulunmayı değerlendirin.
+Kuruma özgü politikaları, özel terimleri ve kişisel iş akışı tercihlerini yerel tutun. Skill farklı proje ve ürünlerde işe yarıyor, açık tetikleyicilere sahip, adı belli bir kaynağa dayanıyor ve mevcut skill'lerden ayrı bir disiplin getiriyorsa Doctrine'a katkı olarak önermeyi düşünün.
 
 ## Katkıyı doğrulayın
 

@@ -1,36 +1,36 @@
 ---
 title: Installation
-description: Choose the Doctrine installation method supported by your AI coding client.
+description: Pick the Doctrine installation method that works with your AI coding client.
 ---
 
-Doctrine can be delivered as a native plugin, through an MCP server, or by copying skill files manually. The skill content is the same, but discovery and invocation differ by client.
+You can install Doctrine as a native plugin, connect it through an MCP server, or copy its skill files yourself. The skill content stays the same, but each client finds and starts skills differently.
 
 ## Choose a method
 
 | Method | Use it when | Important behavior |
 |---|---|---|
-| Native plugin | Your client supports the Doctrine plugin | The client may select skills from their descriptions |
+| Native plugin | Your client supports the Doctrine plugin | The client may choose skills from their descriptions |
 | MCP server | Your client supports MCP prompts | Doctrine skills appear as prompts; selection behavior depends on the client |
-| Manual copy | Your client supports local instruction or skill files | You control where the files are placed and when they are updated |
+| Manual copy | Your client supports local instruction or skill files | You choose where the files go and when to update them |
 
 ## Claude Code plugin
 
-This is the shortest installation path for Claude Code:
+For Claude Code, the shortest installation path is:
 
 ```text
 /plugin marketplace add aethrox/doctrine
 /plugin install doctrine
 ```
 
-After installation, explicitly request a skill once to verify it is available:
+After installation, name a skill directly to check that it is available:
 
 > Use the Doctrine `explain-plainly` skill to explain the difference between a test and a code review.
 
-Automatic selection is useful, but it is not a reliable installation test.
+Automatic selection is useful, but it does not reliably prove the installation worked.
 
 ## MCP server
 
-The MCP route requires Node.js 18 or newer. Add Doctrine as a local MCP server using the configuration format supported by your client:
+The MCP option requires Node.js 18 or newer. MCP is a shared protocol that lets a client connect to external prompts, tools, and resources. Add Doctrine as a local MCP server using your client's configuration format:
 
 ```json
 {
@@ -43,13 +43,13 @@ The MCP route requires Node.js 18 or newer. Add Doctrine as a local MCP server u
 }
 ```
 
-The location of this configuration differs between clients. The `command` and `args` values remain the same. You can also start the server directly:
+Clients store this configuration in different places, but the `command` and `args` values stay the same. You can also start the server directly:
 
 ```bash
 npx github:aethrox/doctrine
 ```
 
-Doctrine registers every `SKILL.md` file as an MCP prompt. MCP defines prompts as user-controlled templates. A client may show them in a prompt menu, expose them through a command, or provide additional automation. Do not assume that installing the MCP server makes every skill activate automatically.
+Doctrine registers every `SKILL.md` file as an MCP prompt, which is a template you choose to use. Your client might show these prompts in a menu, expose them through a command, or add its own automation. Installing the MCP server does not mean every skill will activate automatically.
 
 ## Manual installation
 
@@ -59,7 +59,7 @@ Clone the repository:
 git clone https://github.com/aethrox/doctrine.git
 ```
 
-Then copy the required skill directories into the skill or instruction location documented by your client. For a client that reads `~/.claude/skills`, this Bash command copies every Doctrine skill:
+Then copy the skill directories you need into the location your client uses for skills or instructions. If your client reads `~/.claude/skills`, this Bash command copies every Doctrine skill:
 
 ```bash
 for s in doctrine/skills/*/; do
@@ -68,7 +68,7 @@ for s in doctrine/skills/*/; do
 done
 ```
 
-Manual installations do not update automatically. Pull the latest Doctrine changes and copy the files again when you want to update.
+A manual installation will not update itself. When you want a newer version, pull the latest Doctrine changes and copy the files again.
 
 ## Verify the installation
 
@@ -76,4 +76,4 @@ Manual installations do not update automatically. Pull the latest Doctrine chang
 2. Ask it to explain the difference between a skill and a tool.
 3. Confirm that the answer follows the skill's plain-language discipline.
 
-If the skill does not appear, confirm that your client supports the chosen method, recheck its configured path, and restart clients that only discover integrations at startup.
+If the skill does not appear, make sure your client supports the method you chose and recheck the configured path. Some clients only find integrations at startup, so you may also need to restart yours.

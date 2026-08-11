@@ -1,5 +1,7 @@
 # Contributing
 
+New to Doctrine contributions? Start with the Wiki's [contributing guide](https://aethrox.github.io/doctrine/contributing/), then use this file for repository-specific requirements.
+
 ## Adding a skill
 
 1. Create `skills/<name>/SKILL.md` with YAML frontmatter:

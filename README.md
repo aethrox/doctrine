@@ -1,6 +1,7 @@
 ![doctrine](./assets/banner-v6.png)
 
 <p align="center">
+  <a href="https://aethrox.github.io/doctrine/"><img alt="Documentation: Doctrine Wiki" src="https://img.shields.io/badge/docs-Doctrine%20Wiki-7C3AED.svg"></a>
   <a href="./LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
   <a href="https://github.com/sponsors/aethrox"><img alt="GitHub Sponsors" src="https://img.shields.io/badge/sponsor-GitHub%20Sponsors-EA4AAA?logo=githubsponsors&logoColor=white"></a>
 </p>
