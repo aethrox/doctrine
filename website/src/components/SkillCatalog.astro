@@ -1,0 +1,103 @@
+---
+import { getCollection } from 'astro:content';
+
+const categoryDescriptions = {
+	'Clarify & Collaborate': 'Make unclear work discussable, teachable, and transferable.',
+	'Discover & Design': 'Turn uncertainty into decisions, specifications, and coherent designs.',
+	'Build & Verify': 'Implement, test, diagnose, review, and improve code with evidence.',
+	'Ship & Operate': 'Release changes safely and keep running systems understandable.',
+	'Extend Doctrine': 'Write agent-facing instructions that preserve Doctrine\'s boundaries.',
+};
+
+const categories = {
+	'Clarify & Collaborate': [
+		'explain-plainly',
+		'teach',
+		'wait-what',
+		'grilling',
+		'to-questionnaire',
+		'wayfinder',
+		'handoff',
+		'triage',
+		'wizard',
+	],
+	'Discover & Design': [
+		'research',
+		'project-groundwork',
+		'prototype',
+		'domain-modeling',
+		'architecture-diagram',
+		'codebase-design',
+		'api-design-standards',
+		'spec-to-tickets',
+	],
+	'Build & Verify': [
+		'tdd',
+		'test-strategy',
+		'code-style-lint',
+		'secure-coding',
+		'diagnosing-bugs',
+		'code-review',
+		'resolving-merge-conflicts',
+		'improve-codebase-architecture',
+	],
+	'Ship & Operate': [
+		'dependency-upgrade-management',
+		'observability',
+		'safe-deployment',
+		'release-versioning',
+		'repo-secure',
+		'repo-ship',
+		'incident-response',
+	],
+	'Extend Doctrine': ['writing-for-agents'],
+};
+
+const skills = await getCollection('skills');
+const byName = new Map(skills.map((skill) => [skill.data.name, skill]));
+const assigned = Object.values(categories).flat();
+const duplicates = assigned.filter((name, index) => assigned.indexOf(name) !== index);
+const missing = skills.map(({ data }) => data.name).filter((name) => !assigned.includes(name));
+const unknown = assigned.filter((name) => !byName.has(name));
+
+if (duplicates.length || missing.length || unknown.length) {
+	throw new Error(
+		`Invalid skill catalog categories. Duplicates: ${duplicates.join(', ') || 'none'}. Missing: ${missing.join(', ') || 'none'}. Unknown: ${unknown.join(', ') || 'none'}.`,
+	);
+}
+---
+
+<p class="catalog-summary">
+	<strong>{skills.length} skills</strong>, grouped by the job you need to do. Use search when you already know the situation or skill name.
+</p>
+
+{
+	Object.entries(categories).map(([category, names]) => (
+		<section aria-labelledby={`category-${category.toLowerCase().replaceAll(/[^a-z]+/g, '-')}`}>
+			<h2 id={`category-${category.toLowerCase().replaceAll(/[^a-z]+/g, '-')}`}>{category}</h2>
+			<p>{categoryDescriptions[category as keyof typeof categoryDescriptions]}</p>
+			<div class="skill-grid">
+				{names
+					.map((name) => byName.get(name)!)
+					.sort((a, b) => a.data.name.localeCompare(b.data.name))
+					.map(({ data }) => (
+						<article class="skill-card">
+							<h3><code>{data.name}</code></h3>
+							<p>{data.description}</p>
+							<a href={`https://github.com/aethrox/doctrine/blob/main/skills/${data.name}/SKILL.md`}>
+								Read SKILL.md <span aria-hidden="true">↗</span>
+							</a>
+						</article>
+					))}
+			</div>
+		</section>
+	))
+}
+
+<style>
+	.catalog-summary {
+		padding: 0.9rem 1rem;
+		border-left: 3px solid var(--sl-color-accent);
+		background: var(--sl-color-accent-low);
+	}
+</style>

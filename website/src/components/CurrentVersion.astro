@@ -1,0 +1,19 @@
+---
+import repositoryPackage from '../../../package.json';
+---
+
+<span class="version">Doctrine v{repositoryPackage.version}</span>
+
+<style>
+	.version {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.25rem 0.65rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 999px;
+		color: var(--sl-color-gray-2);
+		font-size: var(--sl-text-xs);
+		font-weight: 650;
+		letter-spacing: 0.04em;
+	}
+</style>
