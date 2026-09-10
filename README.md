@@ -6,7 +6,7 @@
   <a href="https://github.com/sponsors/aethrox"><img alt="GitHub Sponsors" src="https://img.shields.io/badge/sponsor-GitHub%20Sponsors-EA4AAA?logo=githubsponsors&logoColor=white"></a>
 </p>
 
-Software engineering discipline grounded in named primary standards (OWASP, ITIL, IETF RFCs, ISO, BABOK, SBAR, and more) instead of invented convention. 33 skills covering the software development lifecycle: TDD, code review, incident response, domain modeling, deployment, dependency management, and more.
+Software engineering discipline grounded in named primary standards (OWASP, ITIL, IETF RFCs, ISO, BABOK, SBAR, and more) instead of invented convention. 34 skills covering the software development lifecycle: TDD, code review, incident response, domain modeling, deployment, dependency management, and more.
 
 New to Doctrine? Start with the bilingual [Doctrine Wiki](https://aethrox.github.io/doctrine/).
 
@@ -64,7 +64,7 @@ Re-run after pulling updates to resync.
 
 Every skill follows the same shape: a one-sentence defining constraint (the fact that makes it behave differently from the obvious default), a numbered set of phases with concrete, checkable rules, and a closing checklist. The skills combine named external standards and established practices with clearly labeled Doctrine policy defaults.
 
-See [WORKFLOW.md](./WORKFLOW.md) for how the 33 skills relate to each other: the lifecycle they map to, which ones cross-reference which, and a worked example.
+See [WORKFLOW.md](./WORKFLOW.md) for how the 34 skills relate to each other: the lifecycle they map to, which ones cross-reference which, and a worked example.
 
 ## Skills
 
@@ -103,6 +103,7 @@ See [WORKFLOW.md](./WORKFLOW.md) for how the 33 skills relate to each other: the
 | [explain-plainly](./skills/explain-plainly/SKILL.md) | [ISO 24495-1:2023](https://www.iso.org/standard/78907.html) Plain Language standard, applied as a default posture | No unexplained jargon by default, framing from the reader's stake, maintaining a running glossary, verifying the explanation is actionable |
 | [repo-ship](./skills/repo-ship/SKILL.md) | [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/), applied at authoring time, plus repo-creation-as-first-class-step practice | Splitting commits by intent, naming a new repo for what it is, deciding visibility deliberately, filling description and topics at creation |
 | [project-groundwork](./skills/project-groundwork/SKILL.md) | [ISO/IEC/IEEE 29148:2018](https://www.iso.org/standard/72089.html) requirements quality characteristics | Scanning a draft for ambiguity, inconsistency, incompleteness, and unverifiable claims, batching only the blocking gaps, writing decisions into the document and the repository's existing decision record together |
+| [capacity-estimation](./skills/capacity-estimation/SKILL.md) | [Little's Law](https://pubsonline.informs.org/doi/10.1287/opre.9.3.383) (Little, 1961), [ISO/IEC 25010:2023](https://www.iso.org/standard/78176.html) performance efficiency, Gunther's Universal Scalability Law, [IEC 80000-13](https://www.iec.ch/prefixes-binary-multiples) binary prefixes | Restating "fast" and "scalable" as numbers with percentiles, labeling every input measured/derived/assumed, sizing concurrency as arrival rate times service time, headroom against the utilization curve, ending in a recorded decision |
 
 ## MCP server internals
 
@@ -110,7 +111,7 @@ See [WORKFLOW.md](./WORKFLOW.md) for how the 33 skills relate to each other: the
 
 ## Limitations
 
-None of the 33 skills have been battle-tested against a real release, incident, or security review yet; they're authored from standards but not yet validated in use. The MCP server has a smoke test (`npm test`) but hasn't been exercised against a real third-party MCP client (Cursor, Windsurf, etc.) yet, only a scripted handshake. This repo has no SECURITY.md or vulnerability reporting channel yet.
+None of the 34 skills have been battle-tested against a real release, incident, or security review yet; they're authored from standards but not yet validated in use. The MCP server has a smoke test (`npm test`) but hasn't been exercised against a real third-party MCP client (Cursor, Windsurf, etc.) yet, only a scripted handshake. This repo has no SECURITY.md or vulnerability reporting channel yet.
 
 ## Donate
 

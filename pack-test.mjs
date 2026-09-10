@@ -64,7 +64,7 @@ try {
     child.kill();
   }
 
-  assert.equal(prompts.length, 33, `expected 33 prompts from packaged server, got ${prompts.length}`);
+  assert.equal(prompts.length, 34, `expected 34 prompts from packaged server, got ${prompts.length}`);
   const fallback = prompts.filter((p) => p.description.startsWith("Engineering discipline:"));
   assert.equal(fallback.length, 0, `packaged server fell back to generic descriptions for ${fallback.length} skills, frontmatter decoding is broken in the packaged artifact`);
 

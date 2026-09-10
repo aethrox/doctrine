@@ -1,6 +1,6 @@
 # Workflow
 
-How the 33 skills relate to each other: when to reach for which one, and roughly what order they tend to run in on a real piece of work. This is not a rigid pipeline. Skills that do not apply to a given task are skipped, and the lifecycle loops rather than ending at release.
+How the 34 skills relate to each other: when to reach for which one, and roughly what order they tend to run in on a real piece of work. This is not a rigid pipeline. Skills that do not apply to a given task are skipped, and the lifecycle loops rather than ending at release.
 
 ## The lifecycle at a glance
 
@@ -54,6 +54,7 @@ Before code gets written for real, the shape of it gets settled.
 
 | Skill | Reach for it when |
 |---|---|
+| [`capacity-estimation`](./skills/capacity-estimation/SKILL.md) | A design calls itself fast or scalable without a number, or a pool, queue, or instance count needs sizing. Little's Law turns load into required concurrency before the architecture is picked. |
 | [`prototype`](./skills/prototype/SKILL.md) | One specific design or technical question needs answering before committing to an approach. Throwaway code, not production code. |
 | [`codebase-design`](./skills/codebase-design/SKILL.md) | A new module or class needs an interface, or an existing one feels shallow. Depth as the metric, the deletion test, designing it twice. |
 | [`api-design-standards`](./skills/api-design-standards/SKILL.md) | An API's shape is being decided: resource conventions, versioning, what counts as a breaking change. |
@@ -141,6 +142,7 @@ Every explicit `` `skill-name` `` reference found inside another skill's own `SK
 |---|---|
 | `api-design-standards` | `dependency-upgrade-management` |
 | `architecture-diagram` | `domain-modeling` |
+| `capacity-estimation` | `codebase-design`, `domain-modeling`, `grilling`, `incident-response`, `observability`, `project-groundwork`, `safe-deployment` |
 | `code-review` | `code-style-lint`, `tdd` |
 | `codebase-design` | `code-review`, `tdd` |
 | `dependency-upgrade-management` | `safe-deployment`, `secure-coding`, `tdd` |
