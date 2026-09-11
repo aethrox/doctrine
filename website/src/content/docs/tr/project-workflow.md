@@ -53,7 +53,9 @@ wayfinder veya grilling
 → repo-ship
 ```
 
-Güvenlik açısından hassas değişikliklerde `secure-coding` geliştirme sırasında uygulanmalıdır. İnceleme aşamasına ertelenmemelidir.
+### Güvenlik açısından hassas bir değişiklik
+
+`secure-coding` geliştirme sırasında uygulanmalıdır. Güvenlik işin bir parçasıdır, inceleme aşamasında eklenen bir şey değildir.
 
 ## “Tamamlandı” demeden önce kanıt
 

@@ -55,4 +55,12 @@ Her anlamlı değişiklikte:
 
 Kimlik bilgilerini konuşmaya yapıştırmayın ve Git deposuna göndermeyin. İzin isteklerini onaylamadan önce neye erişim verildiğini okuyun.
 
+## Devam etmeye hazırsınız
+
+Şu noktaları sayfaya geri dönmeden anlatabiliyorsanız devam edebilirsiniz:
+
+- Bir skill ile bir aracın farkı.
+- Bir işin neden tek bir Doctrine skill'iyle karşılanabileceği.
+- İstenen bir değişikliğin çalıştığını hangi kanıtın göstereceği.
+
 Sonraki adım: [Kurulum](../installation/) ve ardından [Temel Kavramlar](../core-concepts/).
