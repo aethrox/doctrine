@@ -67,6 +67,40 @@ assert.deepEqual(discoverSkillNames(skillsDir), skillNames, "every skills/ direc
 assert.deepEqual(categorised, skillNames, `${catalogRelativePath}: every skill must appear in exactly one category`);
 assert.deepEqual(translated, skillNames, `${catalogRelativePath}: every skill must have a Turkish description`);
 
+// Category keys sit at one tab; the nested label/description keys are unquoted, so they do not match.
+const categoryKeys = (declaration) => [...objectBlock(declaration).matchAll(/^\t'([^']+)':/gm)].map(([, key]) => key).sort();
+const declaredCategories = categoryKeys("const categories = {");
+assert.deepEqual(categoryKeys("const categoryDescriptions = {"), declaredCategories, `${catalogRelativePath}: every category needs an English description`);
+assert.deepEqual(categoryKeys("const turkishCategories = {"), declaredCategories, `${catalogRelativePath}: every category needs a Turkish label and description`);
+
+const readRepoFile = (relativePath) => readFileSync(join(import.meta.dirname, ...relativePath.split("/")), "utf8");
+
+// This array is what the Claude Code plugin actually installs, so a gap here ships missing skills.
+const pluginRelativePath = ".claude-plugin/plugin.json";
+const pluginSkills = (JSON.parse(readRepoFile(pluginRelativePath)).skills ?? []).map((entry) => entry.replace(/^\.\/skills\//, ""));
+assert.deepEqual([...pluginSkills].sort(), skillNames, `${pluginRelativePath}: the skills array must list every skill`);
+assert.deepEqual(pluginSkills, [...pluginSkills].sort(), `${pluginRelativePath}: keep the skills array alphabetically sorted`);
+
+for (const relativePath of ["README.md", "WORKFLOW.md", ".claude-plugin/marketplace.json"]) {
+  for (const [match, count] of readRepoFile(relativePath).matchAll(/(\d+) skills/g)) {
+    assert.equal(Number(count), skillNames.length, `${relativePath}: "${match}" is stale, there are ${skillNames.length}`);
+  }
+}
+
+// WORKFLOW.md says its map was extracted from the skill sources, so hold it to that.
+const workflow = readRepoFile("WORKFLOW.md");
+const skillNameSet = new Set(skillNames);
+const referenced = new Map();
+for (const skill of skills) {
+  const names = [...new Set([...skill.raw.matchAll(/`([a-z][a-z0-9-]*)`/g)].map(([, name]) => name))]
+    .filter((name) => skillNameSet.has(name) && name !== skill.name)
+    .sort();
+  if (names.length) referenced.set(skill.name, names);
+}
+const tabulated = new Map([...workflow.slice(workflow.indexOf("## Full cross-reference map")).matchAll(/^\| `([a-z][a-z0-9-]*)` \| (.+?) \|$/gm)]
+  .map(([, name, cell]) => [name, [...cell.matchAll(/`([a-z][a-z0-9-]*)`/g)].map(([, ref]) => ref).sort()]));
+assert.deepEqual(Object.fromEntries(tabulated), Object.fromEntries(referenced), "WORKFLOW.md: the cross-reference map must match the references in the skill sources");
+
 const child = spawn(process.execPath, ["mcp-server.js"], { cwd: import.meta.dirname, stdio: ["pipe", "pipe", "pipe"] });
 
 let buf = "";
