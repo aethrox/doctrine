@@ -3,8 +3,10 @@ import { mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import assert from "node:assert/strict";
+import { discoverSkillNames } from "./skill-set.mjs";
 
 const repoRoot = import.meta.dirname;
+const expectedSkillCount = discoverSkillNames(join(repoRoot, "skills")).length;
 const workDir = mkdtempSync(join(tmpdir(), "doctrine-pack-test-"));
 
 // Prefer invoking npm's own CLI script through this same Node binary (no shell
@@ -64,7 +66,7 @@ try {
     child.kill();
   }
 
-  assert.equal(prompts.length, 34, `expected 34 prompts from packaged server, got ${prompts.length}`);
+  assert.equal(prompts.length, expectedSkillCount, `expected ${expectedSkillCount} prompts from packaged server, got ${prompts.length}`);
   const fallback = prompts.filter((p) => p.description.startsWith("Engineering discipline:"));
   assert.equal(fallback.length, 0, `packaged server fell back to generic descriptions for ${fallback.length} skills, frontmatter decoding is broken in the packaged artifact`);
 
