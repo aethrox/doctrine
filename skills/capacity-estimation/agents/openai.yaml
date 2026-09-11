@@ -1,0 +1,3 @@
+interface:
+  display_name: "Capacity Estimation"
+  short_description: "Little's Law sizing before the architecture is picked"
