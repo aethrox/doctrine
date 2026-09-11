@@ -22,6 +22,7 @@
   "skills": [
     "./skills/api-design-standards",
     "./skills/architecture-diagram",
+    "./skills/capacity-estimation",
     "./skills/code-review",
     "./skills/code-style-lint",
     "./skills/codebase-design",

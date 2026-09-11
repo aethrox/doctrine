@@ -18,7 +18,7 @@ flowchart LR
     Operate -. incident .-> Operate
 ```
 
-Nine phases, one loop. Work usually enters at **Plan** (a new idea) or at **Operate** (a bug report, an incident, a backlog item), and `triage` is the hinge that routes backlog work back into `spec-to-tickets`.
+Eight phases, one loop, with Operate able to loop on itself during an incident. Work usually enters at **Plan** (a new idea) or at **Operate** (a bug report, an incident, a backlog item), and `triage` is the hinge that routes backlog work back into `spec-to-tickets`.
 
 ## Phase by phase
 
@@ -147,7 +147,8 @@ Every explicit `` `skill-name` `` reference found inside another skill's own `SK
 | `codebase-design` | `code-review`, `tdd` |
 | `dependency-upgrade-management` | `safe-deployment`, `secure-coding`, `tdd` |
 | `diagnosing-bugs` | `secure-coding`, `tdd` |
-| `explain-plainly` | `wait-what` |
+| `domain-modeling` | `explain-plainly`, `grilling` |
+| `explain-plainly` | `domain-modeling`, `wait-what` |
 | `grilling` | `research` |
 | `handoff` | `incident-response` |
 | `improve-codebase-architecture` | `codebase-design`, `domain-modeling` |
