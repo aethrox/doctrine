@@ -62,6 +62,7 @@ git clone https://github.com/aethrox/doctrine.git
 Gerekli skill klasörlerini istemcinizin belgelediği konuma kopyalayın. `~/.claude/skills` klasörünü okuyan bir istemci için şu Bash komutu bütün Doctrine skill klasörlerini kopyalar:
 
 ```bash
+mkdir -p ~/.claude/skills
 for s in doctrine/skills/*/; do
   name=$(basename "$s")
   cp -r "$s" ~/.claude/skills/"$name"/

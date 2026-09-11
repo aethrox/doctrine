@@ -62,6 +62,7 @@ git clone https://github.com/aethrox/doctrine.git
 Then copy the skill directories you need into the location your client uses for skills or instructions. If your client reads `~/.claude/skills`, this Bash command copies every Doctrine skill:
 
 ```bash
+mkdir -p ~/.claude/skills
 for s in doctrine/skills/*/; do
   name=$(basename "$s")
   cp -r "$s" ~/.claude/skills/"$name"/

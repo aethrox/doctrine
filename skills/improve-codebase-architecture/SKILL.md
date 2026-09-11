@@ -7,7 +7,7 @@ description: Scan a codebase (or a named area of one) for architectural friction
 
 Not every rough edge is the same kind of problem. This skill's defining constraint, from Martin Fowler's technical debt quadrant: every finding is classified on two axes before it's prioritized: **deliberate vs. inadvertent** (was the tradeoff known at the time) and **prudent vs. reckless** (was it a reasoned tradeoff or a corner cut under pressure). A knowingly-accepted tradeoff and an accidental mistake call for different responses even when the resulting code looks identical.
 
-This skill finds *what's shallow*; `codebase-design` supplies the vocabulary (module, interface, depth, seam, the deletion test) for describing *why*. Use that skill's terms exactly rather than drifting into generic words like "component" or "service."
+This skill finds *what's shallow*; `codebase-design` supplies the vocabulary (module, interface, depth, seam) for describing *why*, and the deletion test in Phase 2 is this skill's own. Use that skill's terms exactly rather than drifting into generic words like "component" or "service."
 
 ## Phase 1: Scope the scan
 

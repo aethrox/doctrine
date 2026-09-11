@@ -56,7 +56,7 @@ Before code gets written for real, the shape of it gets settled.
 |---|---|
 | [`capacity-estimation`](./skills/capacity-estimation/SKILL.md) | A design calls itself fast or scalable without a number, or a pool, queue, or instance count needs sizing. Little's Law turns load into required concurrency before the architecture is picked. |
 | [`prototype`](./skills/prototype/SKILL.md) | One specific design or technical question needs answering before committing to an approach. Throwaway code, not production code. |
-| [`codebase-design`](./skills/codebase-design/SKILL.md) | A new module or class needs an interface, or an existing one feels shallow. Depth as the metric, the deletion test, designing it twice. |
+| [`codebase-design`](./skills/codebase-design/SKILL.md) | A new module or class needs an interface, or an existing one feels shallow. Depth as the metric, information hiding, designing it twice. |
 | [`api-design-standards`](./skills/api-design-standards/SKILL.md) | An API's shape is being decided: resource conventions, versioning, what counts as a breaking change. |
 | [`architecture-diagram`](./skills/architecture-diagram/SKILL.md) | The overall structure needs drawing for a reader who cannot assemble it from prose. The C4 model picks the zoom level (context, container, component, code) before anything gets drawn. |
 
@@ -94,7 +94,7 @@ Before code gets written for real, the shape of it gets settled.
 | [`observability`](./skills/observability/SKILL.md) | A service needs its health made answerable without reading its code: structured logging, the four golden signals, an SLO with alerts that link a runbook. |
 | [`incident-response`](./skills/incident-response/SKILL.md) | Something is broken in production right now. Severity and declaration, IC/comms/ops roles, mitigate before root-causing, a blameless postmortem after. |
 | [`diagnosing-bugs`](./skills/diagnosing-bugs/SKILL.md) | Something is broken, throwing, or slow and the cause is not yet known. Reproduce reliably, bisect, change one variable at a time. |
-| [`handoff`](./skills/handoff/SKILL.md) | Work changes hands mid-flight: an on-call shift ending, an open incident, a session handing off to whoever picks it up next. SBAR structure, closed-loop confirmation. |
+| [`handoff`](./skills/handoff/SKILL.md) | Work changes hands mid-flight: an on-call shift ending, an open incident, a task passing to a new owner. SBAR structure, closed-loop confirmation. |
 
 This is the only phase that loops on itself: an incident can trigger `diagnosing-bugs`, which can trigger `handoff` to the next shift, without ever leaving Operate.
 
@@ -113,7 +113,7 @@ These do not belong to one phase. They get reached for whenever the situation ma
 | Skill | Reach for it when |
 |---|---|
 | [`teach`](./skills/teach/SKILL.md) | Something needs explaining so it is actually retained, not just told once. Bloom's level, worked-example fading. |
-| [`explain-plainly`](./skills/explain-plainly/SKILL.md) | The audience is outside the technical team. Default plain-language posture and a maintained glossary, not a recovery move; separate from `wait-what` below. |
+| [`explain-plainly`](./skills/explain-plainly/SKILL.md) | The audience is outside the technical team. Default plain-language posture, consuming `domain-modeling`'s glossary rather than keeping one of its own, not a recovery move; separate from `wait-what` below. |
 | [`wait-what`](./skills/wait-what/SKILL.md) | The last explanation clearly did not land. Re-pitch with a different framing, never repeat the same one louder. |
 | [`writing-for-agents`](./skills/writing-for-agents/SKILL.md) | Writing or editing a skill, `AGENTS.md`, or `CLAUDE.md` itself. Diátaxis, adapted for a document an agent re-reads instead of a human who learns once. |
 | [`wizard`](./skills/wizard/SKILL.md) | A procedure needs a human's hands or authority at every step: credentials, an unfamiliar dashboard, a one-off migration. |

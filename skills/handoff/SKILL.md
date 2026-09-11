@@ -1,6 +1,6 @@
 ---
 name: handoff
-description: Hand off in-progress work, an on-call shift, or an open incident to another person or agent using a fixed four-part structure, so nothing load-bearing is lost between one owner and the next. Use when work needs to change hands mid-flight, an on-call rotation is ending, or a session needs to brief whoever picks this up next.
+description: Hand off in-progress work, an on-call shift, or an open incident to another person or agent using a fixed four-part structure, so nothing load-bearing is lost between one owner and the next. Use when work needs to change hands mid-flight, an on-call rotation is ending, or an open incident is passing to a new owner. Not for compacting a conversation so a fresh session can resume, which is a session-continuity concern.
 ---
 
 # Handoff

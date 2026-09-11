@@ -52,6 +52,7 @@ npx github:aethrox/doctrine
 
 ```bash
 git clone https://github.com/aethrox/doctrine.git
+mkdir -p ~/.claude/skills
 for s in doctrine/skills/*/; do
   name=$(basename "$s")
   cp -r "$s" ~/.claude/skills/"$name"/
