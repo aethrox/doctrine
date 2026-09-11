@@ -17,3 +17,9 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm audit --omit=dev
+      # The wiki is half this repo's dependencies and went unaudited until a
+      # critical advisory turned up in it.
+      - run: npm ci
+        working-directory: ./website
+      - run: npm audit --omit=dev
+        working-directory: ./website
