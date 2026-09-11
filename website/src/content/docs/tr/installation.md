@@ -75,3 +75,5 @@ Elle kurulan dosyalar kendiliğinden güncellenmez. Yeni sürümü almak istedi�
 1. `explain-plainly` adını açıkça yazarak çağırın.
 2. Skill ile araç arasındaki farkı anlatmasını isteyin.
 3. Yanıtın sade ve anlaşılır olup olmadığını kontrol edin.
+
+Skill görünmüyorsa, istemcinizin seçtiğiniz yöntemi desteklediğinden emin olun ve tanımladığınız yolu yeniden kontrol edin. Bazı istemciler entegrasyonları yalnızca açılışta bulur, bu durumda istemciyi yeniden başlatmanız da gerekebilir.
