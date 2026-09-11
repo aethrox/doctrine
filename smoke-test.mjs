@@ -2,6 +2,7 @@ import { spawn } from "node:child_process";
 import assert from "node:assert/strict";
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
+import { load } from "js-yaml";
 import { parseFrontmatter } from "./frontmatter.mjs";
 import { discoverSkillNames } from "./skill-set.mjs";
 
@@ -81,7 +82,23 @@ const pluginSkills = (JSON.parse(readRepoFile(pluginRelativePath)).skills ?? [])
 assert.deepEqual([...pluginSkills].sort(), skillNames, `${pluginRelativePath}: the skills array must list every skill`);
 assert.deepEqual(pluginSkills, [...pluginSkills].sort(), `${pluginRelativePath}: keep the skills array alphabetically sorted`);
 
-for (const relativePath of ["README.md", "WORKFLOW.md", ".claude-plugin/marketplace.json"]) {
+// Nothing reads these yet, but they ship inside the npm package, so hold them to the skill set.
+for (const { name } of skills) {
+  const relativePath = `skills/${name}/agents/openai.yaml`;
+  let sidecar;
+  try {
+    sidecar = load(readRepoFile(relativePath));
+  } catch {
+    assert.fail(`${relativePath}: every skill needs a readable agents/openai.yaml`);
+  }
+  assert.ok(sidecar?.interface?.display_name?.trim(), `${relativePath}: interface.display_name must be a non-empty string`);
+  assert.ok(sidecar?.interface?.short_description?.trim(), `${relativePath}: interface.short_description must be a non-empty string`);
+}
+
+const readmeRows = [...readRepoFile("README.md").matchAll(/^\|\s*\[([a-z][a-z0-9-]*)\]\(\.\/skills\//gm)].map(([, name]) => name).sort();
+assert.deepEqual(readmeRows, skillNames, "README.md: the skill table must have exactly one row per skill");
+
+for (const relativePath of ["README.md", "WORKFLOW.md", "CONTRIBUTING.md", ".claude-plugin/marketplace.json"]) {
   for (const [match, count] of readRepoFile(relativePath).matchAll(/(\d+) skills/g)) {
     assert.equal(Number(count), skillNames.length, `${relativePath}: "${match}" is stale, there are ${skillNames.length}`);
   }
