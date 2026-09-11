@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { parseFrontmatter } from "./frontmatter.mjs";
+import { discoverSkillNames } from "./skill-set.mjs";
 
 const skillsDir = join(import.meta.dirname, "skills");
 const skills = [];
@@ -42,6 +43,29 @@ for (const dir of readdirSync(skillsDir)) {
   const { name, description } = validateFrontmatter(raw, relativePath, dir);
   skills.push({ name, description, raw, relativePath });
 }
+
+const catalogRelativePath = "website/src/components/SkillCatalog.astro";
+const catalog = readFileSync(join(import.meta.dirname, ...catalogRelativePath.split("/")), "utf8");
+
+// Each literal ends at the next line opening with "}" at column 0, because the two
+// do not close alike: categories ends "};" and turkishSkillDescriptions "} as const;".
+function objectBlock(declaration) {
+  const start = catalog.indexOf(declaration);
+  assert.notEqual(start, -1, `${catalogRelativePath}: could not find "${declaration}"`);
+  const end = catalog.indexOf("\n}", start + declaration.length);
+  assert.notEqual(end, -1, `${catalogRelativePath}: "${declaration}" is not closed at column 0`);
+  return catalog.slice(start, end);
+}
+
+const skillNames = skills.map(({ name }) => name).sort();
+// Category keys are capitalised and contain spaces, so only skill names match here.
+const categorised = [...objectBlock("const categories = {").matchAll(/'([a-z][a-z0-9-]*)'/g)].map(([, name]) => name).sort();
+// One entry per line, and anchoring matters: the Turkish values contain escaped apostrophes.
+const translated = [...objectBlock("const turkishSkillDescriptions = {").matchAll(/^\s*'([a-z][a-z0-9-]*)':/gm)].map(([, name]) => name).sort();
+
+assert.deepEqual(discoverSkillNames(skillsDir), skillNames, "every skills/ directory with a SKILL.md must be discovered");
+assert.deepEqual(categorised, skillNames, `${catalogRelativePath}: every skill must appear in exactly one category`);
+assert.deepEqual(translated, skillNames, `${catalogRelativePath}: every skill must have a Turkish description`);
 
 const child = spawn(process.execPath, ["mcp-server.js"], { cwd: import.meta.dirname, stdio: ["pipe", "pipe", "pipe"] });
 

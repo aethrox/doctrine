@@ -15,6 +15,7 @@ New to Doctrine contributions? Start with the Wiki's [contributing guide](https:
 2. Ground the skill in a real, named external standard or established practice, not invented convention, and cite it explicitly (RFC number, ISO standard, a named author's book or guide, etc.).
 3. Follow the shape every other skill uses: a one-sentence defining constraint, numbered phases with concrete checkable rules, and a closing checklist. Read an existing skill (e.g. `skills/tdd/SKILL.md`) as a template.
 4. Add a row to the skill table in [README.md](./README.md) and, if it interacts with other skills in the lifecycle, a mention in [WORKFLOW.md](./WORKFLOW.md).
+5. Register the skill in `website/src/components/SkillCatalog.astro`: one entry under a category in `categories`, and a Turkish description in `turkishSkillDescriptions`. `npm test` enforces both, and the wiki build fails without them.
 
 ## Running the tests
 
